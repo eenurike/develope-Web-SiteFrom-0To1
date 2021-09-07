@@ -1,0 +1,62 @@
+* {
+    box-sizing: border-box;
+}
+
+.wrapper {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.title {
+    text-align: center;
+}
+
+.title1 {
+    font-size: 40px;
+    margin: 20px 0 30px;
+    display: flex;      /* Это просто для красоты, дальше по курсу */
+    justify-content: center;
+}
+
+.title1::before { /* Перед этим элеметом появится буква К, или можно засунуть другой блок 
+    Так же работает и с after*/
+    /* content: "K"; */
+    content: '';
+    display: block;
+    width: 100px;
+    height: 50px;
+    background-color: pink;
+
+
+} 
+
+.title1:hover { /* Псевдоклассы пишутся через одно двоеточье */
+    color:blue;
+    text-decoration: underline;
+}
+
+.text1 {
+    font-size: 20px;
+    background-color: #ccc;
+}
+
+.text1:hover {
+    background-color: black;
+    color: white;
+
+}
+
+
+.text2 {
+    font-size: 18px;
+    background-color: #ccc;
+}
+
+.text3 {
+    font-style: italic;
+}
+
+.text4 {
+    text-align: right;
+    font-size: 14px;
+}

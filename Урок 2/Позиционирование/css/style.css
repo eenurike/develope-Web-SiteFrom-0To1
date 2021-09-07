@@ -1,0 +1,96 @@
+* {
+    box-sizing: border-box;
+}
+
+.wrapper {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.arrow { /* Поидее наша кнопка должна указывать наверх, не ту скачали,
+    ну да ладно, перернем кнопку вручную при помощи свойства transform */
+    cursor: pointer;
+    /* Курсоров есть много всяких разных смотри на webref.ru */
+    width: 80px;
+    transform: rotate(180deg);
+    /* Но проблема в том в что эта картинка находится в потоке, и нижнии блоки
+    возмущаются "а шо это он без очереди залез", задача вырвать эту картинку из потока */
+    position: absolute;
+    /* Теперь кнопка вообще живет своей жизнью, и он как бы перед всеми блоками,
+    по оси z */
+    position: static; 
+    /* Стандартное поведение элементов */
+    position: fixed;
+    /* Картинка всегда будет там где указали, даже когда скролишь страницу */
+    /* С position уже работают такие свойства как left,right,top,bottom */
+    right: 0;
+    /* То картинка прижмется к правой части вплотную */
+    bottom: 50px;
+    /* Картинка от низк оттадкивается на 50px */
+}
+
+.box { /* Наш блок бля эксперементов */
+    border: 2px solid black;
+    /* Посмотри какие рамки бывают на webref.ru */
+    height: 500px;
+    background: #ccc;
+    margin: 20px 0;
+    position: relative;
+    /* По сути absolute не может работать без своего брата relative,
+    сверху работали примеры с absolute так как по умолчанию у body
+    стоит свойство relative, поэтому если любому блоку прописать просто
+    absolute, и блок будет позиционироваться области видимости рабочего окна.
+    Тут же мы конкретно задали box relative, а его потомку text absolute,
+    и теперь text будет позиционировать только относительно своего родителя,
+    ну если только не прописать отрицательные значения или значение больше
+    самого родителя */
+}
+.text {
+    padding: 20px;
+    background:black;
+    color: white;
+    width: 400px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+.title {
+    text-align: center;
+}
+
+.title1 {
+    font-size: 40px;
+    margin: 20px 0 30px;
+}
+
+.title1:hover { 
+    color:blue;
+    text-decoration: underline;
+}
+
+.text1 {
+    font-size: 20px;
+    background-color: #ccc;
+}
+
+.text1:hover {
+    background-color: black;
+    color: white;
+
+}
+
+
+.text2 {
+    font-size: 18px;
+    background-color: #ccc;
+}
+
+.text3 {
+    font-style: italic;
+}
+
+.text4 {
+    text-align: right;
+    font-size: 14px;
+}
