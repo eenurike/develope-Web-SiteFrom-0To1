@@ -1,0 +1,134 @@
+* {
+    box-sizing: border-box;
+}
+
+.wrapper {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.images1 {
+    transform: translateY(-100px);
+    /* картинка переместилась по оси Y(вертикаль) на -100px,
+    так же и с осью X */
+    transform: translate(50px, -50px);
+    /* первое значение X второе Y */
+    /* Но тут же приходит вопрос можно же это сделать margin
+    если будем перемещать элемент с margin, то и все элементы
+    снизу тоже переместятся */
+    transform: translate(0);
+    margin-top: -100px;
+    /* уберем это */
+    margin-top: 0;
+
+    transition: all 2s ease 0s;
+    /* Это свойство отвечает ща плавность нашего transform,
+    transition можно записывать не только для transform, но
+    и для всех свойств у кого есть числовые значения 
+    all - это для чего именно будем происходить анимация */
+    border: 5px solid rgb(0, 0, 0);
+    transition: border 2s ease 0s;
+    /* Теперь плавность только у цвета рамки, а у поворота нет */
+    /* первый 2s это врнемя на анимацию
+    ease это вид анимации, разные виды анимации можно посмотреть
+    в инпекторе кода, там прям наглядно показывается какие анимации
+    и как они будут анимироваться, и можно даже свою анимацию там 
+    же сделать, двигая ползунки
+    последняя 0s это задержка */
+    transition: all 2s ease 1s;
+    /* Теперь через секунду только началась анимация */
+}
+
+.images1:hover {
+    transform: rotate(30deg);
+    border: 5px solid rgb(255, 53, 53);
+}
+
+.arrow {
+    cursor: pointer;
+    width: 80px;
+    transform: rotate(180deg);
+    position: absolute;
+    position: static; 
+    position: fixed;
+    right: 0;
+    bottom: 50px;
+}
+
+.box {
+    border: 2px solid black;
+    height: 500px;
+    background: #ccc;
+    margin: 20px 0;
+    position: relative;
+}
+.text {
+    padding: 20px;
+    background:black;
+    color: white;
+    width: 400px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+.title {
+    text-align: center;
+}
+
+.title1 {
+    font-size: 40px;
+    margin: 20px 0 30px;
+    position: sticky;
+    top: 0;
+    padding: 10px 20px;
+    background-color: white;
+    z-index: 1;
+}
+
+.title1:hover { 
+    color:blue;
+    text-decoration: underline;
+}
+
+.title1::before,
+.title1::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 5px;
+    width: 50px;
+    height: 50px;
+    background-color: yellowgreen;
+    border-radius: 50%;
+}
+
+.title1::after {  
+    right: 0;
+    left: unset;
+}
+
+.text1 {
+    font-size: 20px;
+    background-color: #ccc;
+}
+
+.text1:hover {
+    background-color: black;
+    color: white;
+}
+
+
+.text2 {
+    font-size: 18px;
+    background-color: #ccc;
+}
+
+.text3 {
+    font-style: italic;
+}
+
+.text4 {
+    text-align: right;
+    font-size: 14px;
+}
