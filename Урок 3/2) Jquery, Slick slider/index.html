@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="css/slick-theme.css"> -->
+    <!-- Лучше выключить это, так как будем делать свои переключалки -->
+    <link rel="stylesheet" href="css/slick.css">
+    <!-- Помним что основноей наш файл css должен быть главным, то есть последним -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    
+    <div class="slider">
+        <div class="item">
+            <div class="image_container">
+                <!-- Почемуто в item нельзя прописать display flex,
+                поэтому я сделал такую конструкцию -->
+                <img src="images/itachi.jpg" alt="itachi">
+            </div>
+        </div>
+        <div class="item">
+            <div class="image_container">
+                <img src="images/kakashi.jpg" alt="kakashi">
+            </div>
+        </div>
+        <div class="item">
+            <div class="image_container">
+                <img src="images/konan.jpg" alt="konan">
+            </div>
+        </div>
+        <div class="item">
+            <div class="image_container">
+               <img src="images/naruto.jpg" alt="naruto"> 
+            </div>
+        </div>
+        <div class="item">
+            <div class="image_container">
+                <img src="images/pain.jpg" alt="pain">
+            </div>
+        </div>
+        <div class="item">
+            <div class="image_container">
+               <img src="images/sasuke.jpg" alt="sasuke"> 
+            </div>
+        </div>
+    </div>
+
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <!-- Если есть jqery в проекте, его нужно подключать самым первым,
+    а потом уже всякие библеотеки, а потом наш главный файл js -->
+    <script src="js/slick.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
