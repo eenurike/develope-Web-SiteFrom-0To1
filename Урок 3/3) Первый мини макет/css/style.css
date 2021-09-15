@@ -4,6 +4,11 @@
     box-sizing: border-box;
 }
 
+html {
+    font-family: sans-serif;
+    /* Пока без подключений шрифтов, просто уберем засечки */
+}
+
 .container {
     max-width: 1195px;
     /* Означает что, если есть возможность быть 1195,
@@ -30,3 +35,87 @@
     позиционируем с самого низа картинки */
 }
 
+.header {
+    padding-top: 34px;
+    /* И встает вопрос а почему не margin, дело в том что в таком случае
+    margin-top тянет за собой весь фон, и остается белое пространство */
+    padding-left: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 166px;
+}
+
+.menu ul {
+    display: flex;
+    align-items: center;
+}
+
+.menu a {
+    /* Все стили для ссылок нужно задавать именно 'a', а не списку */
+    color: #FFFFFF;
+    text-decoration: none;
+    /* Убераем подчеркивание ссылок */
+
+    /* margin-left: 30px; */
+
+    /* Почему не padding, потому что padding расширяет элемент, и получается
+    если пользователь промахнется по ссылки, кликнет в этот отступ слева,
+    то он всеравно перейдет по ссылки, но так не должно быть, еще один
+    момент это у последней ссылки, тоже будет не нужный отступ слева */
+    font-size: 24px;
+    line-height: 28px;
+}
+
+.menu li + li {
+    /* Так мы говорим видишь .menu, дальше видишь первую li, и после этой
+    первой li остальным li задай отступ слева */
+    margin-left: 30px;
+}
+
+.slider {
+    text-align: center;
+    color: #FFFFFF;
+    /* Видим что у заголовка цвет белый и у текста тоже, то будет
+    лучше родителю прописать белый цвет */
+}
+
+.slider .title {
+    font-weight: bold;
+    font-size: 96px;
+    line-height: 112px;
+    
+}
+
+.slider .text {
+    font-size: 24px;
+    line-height: 28px;
+}
+
+/* В инспекторе кода смотришь класс этих точек */
+.slick-dots {
+    margin-top: 30px;
+}
+
+.slick-dots li{
+    display: inline-block;
+}
+
+.slick-dots li + li{
+    margin-left: 15px;
+}
+
+.slick-dots button {
+    font-size: 0;
+    /* Так убрали цифры внутри ЛОЛ */
+    width: 25px;
+    height: 25px;
+    border: 2px solid #FDD486;
+    background: #7A3D1C;
+    border-radius: 50%;
+}
+
+.slick-dots .slick-active button{
+    border: 2px solid #7A3D1C;
+    background: #FDD486;
+}

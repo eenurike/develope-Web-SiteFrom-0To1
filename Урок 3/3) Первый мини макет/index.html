@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/slick.css">
     <link rel="stylesheet" href="css/style.css">
     <title>Document</title>
 </head>
@@ -15,15 +16,59 @@
             <!-- Наш центрирующийся контенер -->
             <header class="header"> 
                 <!-- Шапка нашего макета, и хороший тон когда у тегов есть классы -->
-                <a href="">
+                <a href="#">
                     <img class="logo" src="images/logos/main-logo.svg" alt="">
                     <!-- Запомни!!! логотип всегда должен быть картинкой -->
                 </a>
+                <nav class="menu">
+                    <!-- Тег для навигации -->
+                    <!-- Чтоб вручную это не прописывать воспользуемся emmet
+                    ul>li*5>a[href=#] квадратные скобки для атрибутов -->
+                    <ul>
+                        <li>
+                            <a href="#">Меню</a>
+                        </li>
+                        <li>
+                            <a href="#">О нас</a>
+                        </li>
+                        <li>
+                            <a href="#">Доставка</a>
+                        </li>
+                        <li>
+                            <a href="#">Адрес</a>
+                        </li>
+                        <li>
+                            <a href="#">Контакты</a>
+                        </li>
+                    </ul>
+                    <!-- Для удобства пользования сайта, лучше навинацию делать
+                    через списки. Удобства для ограниченых в чем то людей, и так
+                    гугл будет лучше воспринемать сайт -->
+                </nav>
             </header>
+
+            <div class="slider">
+                <div class="item">
+                    <!-- Но смотри, для slick slider, лучше бы после item, наш
+                    контент обернуть в какой-то блок. Думай что item блок зарезервирован
+                    для этой библеотеки -->
+                    <h2 class="title">Спагетти карбонара</h2>
+                    <p class="text">Традиционный итальянский рецепт - изысканный вкус и наслаждение</p>
+                </div>
+                <div class="item">
+                    <h2 class="title">Спагетти карбонара</h2>
+                    <p class="text">Традиционный итальянский рецепт - изысканный вкус и наслаждение</p>
+                </div>
+                <div class="item">
+                    <h2 class="title">Спагетти карбонара</h2>
+                    <p class="text">Традиционный итальянский рецепт - изысканный вкус и наслаждение</p>
+                </div>
+            </div>
         </div>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="js/slick.min.js"></script>
     <!-- CDN goolge https://developers.google.com/speed/libraries?hl=ru -->
     <script src="js/main.js"></script>
 </body>
