@@ -1,0 +1,92 @@
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
+html {
+    color: white;
+    font-family: sans-serif;
+}
+
+.wrapper {
+    background-image: url('../images/bg/main-bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1210px;
+    margin: 0 auto;
+}
+
+header {
+    padding-top: 46px;
+    display: flex;
+    align-items: flex-end;
+}
+
+
+.menu a {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 28px;
+}
+
+.menu ul {
+    display: flex;
+    margin-bottom: 5px;
+}
+
+.menu ul li {
+    margin-left: 25px;
+}
+
+.menu ul li:first-of-type {
+    margin-left: 36px;
+}
+
+.block {
+    margin-top: 240px;
+    margin-bottom: 46px;
+}
+
+.block .title {
+    font-size: 120px;
+    line-height: 141px;
+} 
+
+.block .text {
+    font-size: 36px;
+    line-height: 42px;
+}
+
+.slick-dots {
+    list-style: none;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.slick-dots button {
+    width: 20px;
+    height: 20px;
+    border: none;
+    background-color: white;
+    border-radius: 50%;
+    font-size: 0;
+}
+
+
+.slick-dots li + li {
+    margin-left: 20px;
+}
+
+.slick-dots .slick-active button{
+    width: 20px;
+    height: 20px;
+    border: 2px solid grey;
+}
