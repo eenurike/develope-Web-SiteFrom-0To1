@@ -1,38 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@1,300&family=Montserrat:wght@300;500;700&family=Open+Sans:wght@300;400;600;700&family=Raleway:wght@700&display=swap" rel="stylesheet">
+    <!-- На сайтах обычно используются 2-3 шрифта, не больше.
+    https://fonts.google.com/ -->
+
     <!-- <link rel="stylesheet" href="css/normalize.css"> -->
     <!-- Лучше использовать современный сброса стилей
     https://necolas.github.io/normalize.css/, но а лучше вообще написать
     свой сброс стилей, так здесь много лишнего -->
-    <link rel="stylesheet" href="css/slick.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/slick.css" />
+    <link rel="stylesheet" href="css/style.css" />
     <title>Document</title>
-</head>
-<body>
-      
+  </head>
+  <body>
     <header class="header">
-        <div class="header__top">
-            <div class="container">
-                <!-- Будем для каждого основного блока создавать контейнер,
+      <div class="header__top">
+        <div class="container">
+          <!-- Будем для каждого основного блока создавать контейнер,
                 так как у каждого фона разные фоны, если засандалить все в один
                 контейнер, то тогда нужен один фон для всего сайта.
                 Имею ввиду фон который выходит за наш контейнер, а контент
                 не должен выходить за контейнер -->
-            </div>
+          <div class="header__top-inner">
+            <!-- inner это внутреняя часть -->
+            <a class="logo" href="#" >
+                <img class="logo__img" src="images/logos/main-logo.svg" alt="o marketing logo"/>
+            </a>
+            <nav class="menu">
+                <ul class="menu__list">
+                    <li class="menu__list-item">
+                        <a class="menu__list-link" href="#">HOME</a>
+                    </li>
+                    <li class="menu__list-item">
+                        <a class="menu__list-link" href="#">ABOUT US</a>
+                    </li>
+                    <li class="menu__list-item">
+                        <a class="menu__list-link" href="#">PORTFOLIO</a>
+                    </li>
+                    <li class="menu__list-item">
+                        <a class="menu__list-link" href="#">OUR TEAM</a>
+                    </li>
+                    <li class="menu__list-item">
+                        <a class="menu__list-link" href="#">BLOG</a>
+                    </li>
+                    <li class="menu__list-item">
+                        <a class="menu__list-link" href="#">CONTACT</a>
+                    </li>
+                    <!-- Для удобства читаемости сперва пишем классы -->
+                </ul>
+            </nav>
+          </div>
         </div>
-        <div class="header__content">
-            <div class="container">
-
-            </div>
-        </div>
+      </div>
+      <div class="header__content">
+        <div class="container"></div>
+      </div>
     </header>
 
     <script src="js/slick.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="js/main.js"></script>
-</body>
+  </body>
 </html>
