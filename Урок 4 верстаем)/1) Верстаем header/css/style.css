@@ -76,7 +76,7 @@ body {
 
 /*
 font-family: 'Merriweather', serif;
-font-family: 'Montserrat', sans-serif;
+
 */
 
 .container {
@@ -127,4 +127,49 @@ font-family: 'Montserrat', sans-serif;
 
 .menu__list-link:hover {
     border-bottom: 1px solid #FCBB08;
+}
+
+
+.header__content {
+    background-image: url('../images/bg/header-bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    
+    font-family: 'Montserrat', sans-serif;
+}
+
+.header__content-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Нужена высота во весь блок, чтоб центрировать по вертикали */
+    min-height: calc(100vh - 93px);
+    /* Задумка такая, что при клике на мышку, мы переходим на контент снизу
+    а этот блок должен занимать все пространство экрана, поэтому 100vh
+    отнимаем от высоты вехнеей навигации */
+    justify-content: space-between;
+}
+
+.header__title {
+    font-weight: 500;
+    font-size: 72px;
+    line-height: 88px;
+    color: #FFFFFF;
+    margin-top: auto;
+    margin-bottom: 19px;
+    padding-top: 130px;
+}
+
+.header__subtitle {
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: 2.74286px;
+    color: #FCBB08;
+    margin-bottom: auto;
+}
+
+.header__icon {
+    margin-bottom: 62px;
 }
