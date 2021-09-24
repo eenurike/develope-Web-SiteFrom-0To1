@@ -367,9 +367,6 @@ body {
 
 }
 
-.portfolio__item {
-  
-}
 
 .portfolio__item img {
   width: 100%;
@@ -437,4 +434,32 @@ body {
   transform: scale(1.1);
 }
 
+.numbers__inner {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 165px;
+}
+
+.portfolio__numbers {
+  text-align: center;
+}
+
+.portfolio__numbers-item {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+  font-size: 60px;
+  line-height: 73px;
+  color: #242121;
+}
+
+.portfolio__numbers-item span {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 19px;
+  color: #333333;
+
+  display: block;
+  margin-top: 9px;
+}
 
