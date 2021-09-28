@@ -383,13 +383,39 @@ body {
 }
 
 .portfolio__item {
-
+  position: relative;
 }
 
-.portfolio__item-link {
-  display: block;
+.portfolio__item a{
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 20px;
+  right: 0;
+  /* Зачсчет того что мы указали по всем сторонам по 0, таким образом
+  как бы блок будет занимать все пространство, но так как у нас отступы
+  у родителя установлены в padding а не в margin, у нас лишнее пространство
+  снизу так что снизу задаем растояние столько же сколько padding bottom.
+  Но так же можно но было бысделать heath 100% и width 100% */
+  opacity: 0;
   background-color: #4C4A4A;
-  padding: 100px;
+  transition: all .5s;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 12px solid #7D7C7C;
+
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 14px;
+  letter-spacing: 1.4px;
+
+  color: #FFFFFF;
+}
+
+.portfolio__item:hover a {
+  opacity: 1;
 }
 
 .portfolio__add {
