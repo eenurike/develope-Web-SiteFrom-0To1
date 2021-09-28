@@ -11,6 +11,10 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/slick.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css"
+    />
     <link rel="stylesheet" href="css/style.css" />
     <title>Document</title>
   </head>
@@ -188,44 +192,50 @@
           <div class="portfolio__filter-btn">
             <!-- Это уже не ссылки! так как это кнопки для фильтра картинок.
             Качаем плагин MixItUp https://www.kunkalabs.com/mixitup/ -->
-            <button class="portfolio-btn">ALL</button>
-            <button class="portfolio-btn">BRANDING</button>
-            <button class="portfolio-btn">DESIGN</button>
-            <button class="portfolio-btn">PHOTOGRAPHY</button>
-            <button class="portfolio-btn">ILLUSTRATION</button>
+            <button class="portfolio-btn" data-filter="all">ALL</button>
+            <button class="portfolio-btn" data-filter=".category-a">BRANDING</button>
+            <button class="portfolio-btn" data-filter=".category-b">DESIGN</button>
+            <button class="portfolio-btn" data-filter=".category-c">PHOTOGRAPHY</button>
+            <button class="portfolio-btn" data-filter=".category-d">ILLUSTRATION</button>
+            <!-- На кнопку указываем все наши категории -->
           </div>
         </div>
       </div>
       <div class="portfolio__content">
-        <!-- Наши картинки выходят за пределы нашего container как по макету -->
-        <div class="portfolio__item">
+        <!-- Наши картинки выходят за пределы нашего container как по макету.
+        И тут будет наш плагин с фильтром картинок -->
+        <div class="portfolio__item mix category-a">
           <!-- Создали обертку для картинок, так как по макету видно, что будет 
           творится с картинками при наведении, при наведении появляется ссылка,
-          на так называемый проект этой картинки -->
+          на так называемый проект этой картинки.
+          Mix и category класс это классы от плагина -->
           <img src="images/portfolio-images/1.jpg" alt="portfolio-image">
+          <div calss="portfolio__item-link" href="#">
+            SHOW PROJECT
+          </div>
         </div>
-        <div class="portfolio__item">
+        <div class="portfolio__item mix category-a">
           <img src="images/portfolio-images/2.jpg" alt="portfolio-image">
         </div>
-        <div class="portfolio__item">
+        <div class="portfolio__item mix category-b">
           <img src="images/portfolio-images/3.jpg" alt="portfolio-image">
         </div>
-        <div class="portfolio__item">
+        <div class="portfolio__item mix category-b">
           <img src="images/portfolio-images/4.jpg" alt="portfolio-image">
         </div>
-        <div class="portfolio__item">
+        <div class="portfolio__item mix category-c">
           <img src="images/portfolio-images/5.jpg" alt="portfolio-image">
         </div>
-        <div class="portfolio__item">
+        <div class="portfolio__item mix category-c">
           <img src="images/portfolio-images/6.jpg" alt="portfolio-image">
         </div>
-        <div class="portfolio__item">
+        <div class="portfolio__item mix category-c">
           <img src="images/portfolio-images/7.jpg" alt="portfolio-image">
         </div>
-        <div class="portfolio__item">
+        <div class="portfolio__item mix category-c">
           <img src="images/portfolio-images/8.jpg" alt="portfolio-image">
         </div>
-        <div class="portfolio__item">
+        <div class="portfolio__item mix category-d">
           <img src="images/portfolio-images/9.jpg" alt="portfolio-image">
         </div>
       </div>
@@ -242,7 +252,12 @@
       </blockquote>
 
       <div class="portfolio__video">
-        <a class="portfolio__video-link" href="#" >
+        <!-- Тут нужно реализовать функционал popup, чтоб кликнув на плей,
+        всплывал попап с видосом, пользователь смотрит видос, досмотрел
+        нажал на крестик и попап закрылся.
+        Плагин https://fancyapps.com/fancybox/3/ -->
+        <a data-fancybox class="portfolio__video-link" href="https://www.youtube.com/watch?v=-OIRw4KsACE" >
+          <!-- Ставим атрибут и ссылку на видео -->
           <img src="images/logos/play.svg" alt="play video">
         </a>
       </div>
@@ -284,8 +299,12 @@
       </div>
     </div>
 
-    <script src="js/slick.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="js/slick.min.js"></script>
+    <script src="js/mixitup.min.js"></script>
+    <script type="module">
+      import { Fancybox } from "https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.esm.js";
+    </script>
     <script src="js/main.js"></script>
   </body>
 </html>

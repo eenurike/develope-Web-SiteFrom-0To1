@@ -356,6 +356,11 @@ body {
   border-bottom: 1px solid #FCBB08;
 }
 
+.portfolio__filter-btn .mixitup-control-active {
+  border-bottom: 1px solid #FCBB08;
+  /* Активный класс на нажутую кнопку от фильтра из нашей библиотеки */
+}
+
 .portfolio__content{
   column-count: 4;
   /* Берет содержимое блока и делит на 4 колонки
@@ -375,6 +380,16 @@ body {
   макету, так как сетка рушится, надо играться со значениями */
   padding-bottom: 20px;
   /* Лучше падинг, а то маргид странно много растояния отталкивает вниз */
+}
+
+.portfolio__item {
+
+}
+
+.portfolio__item-link {
+  display: block;
+  background-color: #4C4A4A;
+  padding: 100px;
 }
 
 .portfolio__add {
