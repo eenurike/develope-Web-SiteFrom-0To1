@@ -553,7 +553,7 @@ body {
 }
 
 button.slick-arrow:hover {
-  transform: translateY(-50%) scale(1.3);
+  transform: translateY(-400%) scale(1.3);
 }
 
 button.slick-next {
@@ -594,3 +594,72 @@ button.slick-prev {
 
 /* Block 8 Pricing plane */
 
+.pricing {
+  background-color: #F6F8FA;
+  padding: 145px 0 160px;
+}
+
+.pricing__inner {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 90px;
+}
+
+ul.pricing__items {
+  padding: 24px 25px 50px ;
+  background-color: #FFFFFF;
+  width: 370px;
+  text-align: center;
+}
+
+.pricing__items li + li {
+  margin-top: 30px;
+}
+
+.pricing__items li {
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 22px;
+  color: #666565;
+}
+
+ul li.pricing__items-num {
+  font-weight: 300;
+  font-size: 80px;
+  line-height: 109px;
+  color: #666565;
+  margin: 8px 0 50px;
+}
+
+li.pricing__items-num sup {
+  font-size: 40px;
+}
+
+li.pricing__items-name {
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 22px;
+  color: #666565;
+  text-align: left;
+}
+
+
+li a {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 17px;
+  letter-spacing: 1.2px;
+  color: #666565;
+  display: block;
+  margin-top: 70px;
+}
+
+/* Block 9 logos */
+
+ul.logos__inner {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 70px 0 95px;
+}
