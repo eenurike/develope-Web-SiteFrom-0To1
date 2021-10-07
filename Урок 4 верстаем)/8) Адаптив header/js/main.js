@@ -1,15 +1,5 @@
 $(function(){
 
-    var mixer = mixitup('.portfolio__content',{
-        animation: {
-            enable: false
-        }
-        /* Убрали анимацию, у плагина на сайте все опции прописанны */
-    });
-    /* Тут пишем наш родительский блок картинок, который
-    будет отфильтровываться */
-
-
     $('.slider__inner').slick({
         dots: true,
         slidesToShow: 1,
@@ -19,4 +9,19 @@ $(function(){
         nextArrow: '<button type="button" class="slick-next"><img src="images/logos/arrow-right.svg"></button>'
         /* Так мы записываем наши кастомные кнопки */
     });
+
+
+    $('.menu__btn').on('click', function() {
+        $('.menu__list').toggleClass('active__list');
+    });
+    
+    
+    var mixer = mixitup('.portfolio__content',{
+        animation: {
+            enable: false
+        }
+        /* Убрали анимацию, у плагина на сайте все опции прописанны */
+    });
+    /* Тут пишем наш родительский блок картинок, который
+    будет отфильтровываться */
 });

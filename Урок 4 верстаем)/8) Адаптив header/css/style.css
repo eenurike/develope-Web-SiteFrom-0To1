@@ -109,6 +109,11 @@ body {
     display: flex;
 }
 
+.menu__btn {
+  display: none;
+  /* Убераем бургер меню из декстопа */
+}
+
 .menu__list-item + .menu__list-item {
     margin-left: 43px;
 }
@@ -811,7 +816,6 @@ textarea {
   color: #CCCCCC;
 }
 
-
 /* АДАПТИВ */
 
 /* Медиа запрос должен идти ниже элемента к кторому он обращается,
@@ -869,8 +873,49 @@ textarea {
 
 @media (max-width: 768px) {
   /* Для планшетов */
-  .menu {
-    display: none;
+
+  .menu__list {
+    display: block;
+    position: absolute;
+    top: 93px;
+    right: 0;
+    left: 0;
+    /* Запомни!!! При абослюте если прописать left 0 right 0
+    то элемент растянется на всю ширину, анологично с top и bottom*/
+    background-color: #fcbb0898;
+    text-align: center;
+    transform: translateY(-200%);
+    transition: .5s;
+  }
+
+  ul.menu__list.active__list {
+    transform: translateY(0);
+    transition: .5s;
+  }
+
+  .menu__list-item + .menu__list-item,
+  .menu__list-item a {
+    margin: 0;
+  }
+
+
+  .menu__list-link:hover {
+    border-bottom: 1px solid white;
+  }
+
+  .menu__list-item .menu__list-link {
+    display: inline-block;
+    padding: 20px 20px;
+  }
+
+  .menu__btn {
+    display: block;
+    /* В этом моменте появляется бургер меню */
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    margin-bottom: 10px;
+    /* Чтоб бургер встал в ровень с логотипом */
   }
 
   .header__title {
@@ -892,5 +937,16 @@ textarea {
   .header__title {
     font-size: 34px;
     line-height: 44px;
+    /* Есть такое правило высота строки это шрифт умноженое на 1.5 */
   }
+
+  .header__subtitle {
+    font-size: 12px;
+    line-height: 14px;
+  }
+  /* Но видим для мобильных устройств фоновая картинка слишком большая,
+  если ее уменьшать, то по высоте она будет маленькой, вообще дизайнер должен
+  продумывать дизайн и для мобилок, менять фоновые картинки подходщих размеров
+  В частности бывает дизайны без мобилок, так что приходится выкручиваться и 
+  моб. дизайн выдумывать находу */
 }
