@@ -816,63 +816,9 @@ textarea {
   color: #CCCCCC;
 }
 
-/* АДАПТИВ */
-
-/* Медиа запрос должен идти ниже элемента к кторому он обращается,
-либо все медиа запросы писать в самом конце файла, или как мне удобно
-медиа запросы писать в отдельном файле. Создаешь например media.css
-и подключаешь его ниже чем style.css, единственный случай когда что-то
-подключается ниже чем основной css файл, так как media файлы должны 
-перебивать свойста из основного файла, то есть специфичность должна быть сильнее */
-
-/* @media (max-width: 1200px) {
-  Это медиа вопрос адресован к мониторам меньше 1200px
-  body {
-    background-color: rgba(255, 217, 192, 0.657);
-  }
-
-  section.about {
-    background-color: brown;
-  }
-
-  .title {
-    font-size: 40px !important;
-  }
-}
-
-@media (max-width: 1000px) {
-  breakpointы должны идти в порядке убывания!!!
-  body {
-    background-color: blue;
-  }
-}
-
-
-@media (min-width: 1200px) {
-  Это медиа вопрос адресован к мониторам больше 1200px
-  А минимальные медиа запросы идут от меньшего к большему
-  body {
-      background-color: rgba(203, 255, 203, 0.664);
-  }
-}
-
-@media (min-width: 1500px) {
-  body {
-      background-color: purple;
-  }
-} 
- */
-
-
-/* НАЧАЛО. Уменьшаем экран в режиме адаптива, и наблидаем при каком
-разрешении экрана будут происходить гадости, ставим breakpoint и исправляем.
-Насчет важных breakpoint будем разговаривать, какие чаще всего встречающиеся.
-Есть два вида адаптива:
-1) Адаптив по breakponit
-2) Резиновый адаптив, то есть какой бы экран не был, всегда будет шикардосно */
+/* АДАПТИВ header*/
 
 @media (max-width: 768px) {
-  /* Для планшетов */
 
   nav .menu__list {
     display: block;
@@ -880,47 +826,21 @@ textarea {
     top: 0;
     right: 0;
     left: 0;
-    /* Запомни!!! При абослюте если прописать left 0 right 0
-    то элемент растянется на всю ширину, анологично с top и bottom*/
     background-color: black;
     text-align: center;
     transform: translateY(-200%);
     transition: .5s;
     padding: 90px 0 15px;
-    /* Но теперь во первых не видно логотипа и навигацию, во вторых
-    они скрыты за меню, с первым вариантом втавлять новуб картинку не варик,
-    благо что это svg элемент можно просто поменять цвета */
   }
 
   .logo, .menu__btn {
     position: relative;
     z-index: 2;
-    /* Теперь эти svg элементы стоят как свершу нашего меню, щасчет чего их стало видно */
   }
 
   .header__top-inner.header__top-inner--active ul.menu__list{
     transform: translateY(0);
-    /* ТО есть при клике на бургер, к родителю добавляется класс header__top-inner--active
-    и наши требования к menu__list */
   } 
-
-  /* .header__top-inner nav.menu path,
-  .header__top-inner nav.menu rect,
-  .header__top-inner a.logo path  {
-    transition: .5s;
-     Плавность 
-  } */
-
-  /* .header__top-inner.header__top-inner--active nav.menu path,
-  .header__top-inner.header__top-inner--active nav.menu rect,
-  .header__top-inner.header__top-inner--active a.logo path {
-    fill: white;
-     Это менят цвет svg бургеру меню, у svg path и rect fill отвечает за цвет,
-    и меняем цвет у логотипа, зачем городить много строк кода, когда можно определить
-    для нескольких элементов одно значение 
-  } */
-
-  /* А можно еще короче написать */
 
   .header__top-inner path,
   .header__top-inner rect {
@@ -931,9 +851,6 @@ textarea {
   .header__top-inner.header__top-inner--active rect {
     fill: white;
   }
-  /* Так как у всех ведь svg есть path тег, то и просто их и указываем, ну и не
-  забываем про приоритетность */
-
 
   .menu__list-item + .menu__list-item,
   .menu__list-item a {
@@ -953,12 +870,10 @@ textarea {
 
   .menu__btn {
     display: block;
-    /* В этом моменте появляется бургер меню */
     background-color: transparent;
     border: none;
     padding: 0;
     margin-bottom: 10px;
-    /* Чтоб бургер встал в ровень с логотипом */
   }
 
   .header__title {
@@ -973,23 +888,16 @@ textarea {
   }
 }
 
-/* Минимальный brealpoint 320px!!!
-Видим что на 440 уже рушится все */
-
 @media (max-width: 440px) {
   .header__title {
     font-size: 34px;
     line-height: 44px;
-    /* Есть такое правило высота строки это шрифт умноженое на 1.5 */
   }
 
   .header__subtitle {
     font-size: 12px;
     line-height: 14px;
   }
-  /* Но видим для мобильных устройств фоновая картинка слишком большая,
-  если ее уменьшать, то по высоте она будет маленькой, вообще дизайнер должен
-  продумывать дизайн и для мобилок, менять фоновые картинки подходщих размеров
-  В частности бывает дизайны без мобилок, так что приходится выкручиваться и 
-  моб. дизайн выдумывать находу */
 }
+
+/* Адаптив about */
