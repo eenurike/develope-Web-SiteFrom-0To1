@@ -816,10 +816,104 @@ textarea {
   color: #CCCCCC;
 }
 
-/* АДАПТИВ header*/
+
+@media (max-width: 1440px) {
+  /* Адаптив magic */
+  .magic {
+    background-position: left bottom;
+  }
+
+  .magic__inner {
+    padding: 50px 0;
+  }
+}
+
+@media (max-width: 1200px) {
+
+  /* Адаптив about */
+  .about {
+    padding: 100px 0;
+  }
+
+  .about__inner {
+    flex-direction: column;
+  }
+
+  .about__text {
+    margin-top: 50px;
+  }
+}
+
+
+@media (max-width: 992px) {
+  /* Адаптив magic */
+  .magic {
+    background-image: none;
+    /* Картинку с собакеном убераем, обычная практика для адаптива
+    просто эта картинка никак не влезет по ширине, так как она узкая.
+    Дизайнер должен предоставлять другую для мобтлок картинку */
+  }
+
+  .magic__inner {
+    max-width: 100%;
+    margin-left: 0;
+  }
+
+  .magic__text p:first-of-type {
+    margin-top: 50px;
+  }
+
+  /* Адаптив expertise */
+  .expertise__inner {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .expertise__text {
+    margin-top: 40px;
+  }
+
+}
 
 @media (max-width: 768px) {
+  div h2.title {
+    font-size: 48px;
+    line-height: 60px;
+  }
 
+  .about, .expertise {
+    padding: 75px 0;
+  }
+
+  /* Адаптив expertise */
+  .expertise div h2.title {
+    margin-bottom: 50px;
+  }
+
+  .expertise__info {
+    margin-right: 0;
+    width: 100%;
+  }
+
+  .expertise__items {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .expertise__items .expertise__item + .expertise__item {
+    margin-top: 40px;
+  }
+
+  .expertise__item {
+    width: 100%;
+    background-position: center left;
+  }
+
+  .expertise__inner {
+    margin-bottom: 70px;
+  }
+
+  /* АДАПТИВ header*/
   nav .menu__list {
     display: block;
     position: absolute;
@@ -888,7 +982,13 @@ textarea {
   }
 }
 
-@media (max-width: 440px) {
+@media (max-width: 450px) {
+  div h2.title,
+  .about__inner h2.title {
+    font-size: 30px;
+  }
+
+  /* Адаптив header */
   .header__title {
     font-size: 34px;
     line-height: 44px;
@@ -898,6 +998,18 @@ textarea {
     font-size: 12px;
     line-height: 14px;
   }
+
+  /* Адаптив expertise */
+  .expertise__item {
+    padding-left: 65px;
+    background-position: top left;
+  }
 }
 
-/* Адаптив about */
+@media (max-width: 340px) {
+    /* Адаптив expertise */
+    .expertise__item {
+      padding-left: 0;
+      padding-top: 60px;
+    }
+}
