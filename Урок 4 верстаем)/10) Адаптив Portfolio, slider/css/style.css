@@ -545,9 +545,9 @@ body {
  margin-left: 13px;
 }
 
-.slick-dots .slick-active button {
-  width: 10px;
-  height: 10px;
+.slick-dots li.slick-active button {
+  width: 8px;
+  height: 8px;
   opacity: 1;
 }
 
@@ -669,7 +669,7 @@ li a {
 ul.logos__inner {
   display: flex;
   justify-content: space-between;
-  flex-wrap: wrap;
+  align-items: center;
   padding: 70px 0 95px;
 }
 
@@ -842,6 +842,26 @@ textarea {
 }
 
 @media (max-width: 1200px) {
+  /* адаптив connection */
+  .connection {
+    /* Напомним что это карта просто картинка, потом будем подключать
+    настоящие катры */
+    padding: 45px 0 560px;
+    background-image: url("../images/map.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 50%;
+    background-position: center 115%;
+  }
+
+  /* Адаптив team */
+  .team__items,
+  .pricing__inner {
+    column-gap: 20px;
+    /* Смотри свойство column gap дкйствует как display flex,
+    на родителя, отступы между блоками по 20, но это учитывается
+    и слева и српава по 10px */
+  }
+
   /* адаптив slider */
   .slider__block {
     padding: 150px 0 85px;
@@ -875,6 +895,16 @@ textarea {
 
 
 @media (max-width: 992px) {
+  /* Адаптив team */
+  .team,
+  .pricing {
+    padding: 80px 0 70px;
+  }
+
+  .team__items {
+    margin-top: 60px;
+  }
+
   /* адаптив slider */
   .slider__link {
     font-size: 25px;
@@ -958,6 +988,58 @@ textarea {
 
   .about, .expertise {
     padding: 75px 0;
+  }
+
+  /* адаптив connection */
+  .form {
+    max-width: 100%;
+  }
+
+  .footer__social {
+    flex-wrap: wrap;
+  }
+
+  .footer__soical-list {
+    width: calc(100% / 3);
+    /* Чтоб ссылки в футере были по три столбца */
+  }
+
+  .footer__social .footer__soical-list a {
+    margin-bottom: 30px;
+  }
+
+  /* адаптив logos */
+  ul.logos__inner {
+    flex-wrap: wrap;
+    justify-content: space-around;
+    column-gap: 20px;
+    row-gap: 20px;
+  }
+
+
+  /* Адаптив pricing */
+  .pricing__inner {
+    flex-direction: column;
+    align-items: center;
+    row-gap: 20px;
+  }
+
+  /* Адаптив team */
+  .team__items {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .team__item {
+    width: 270px;
+  }
+
+  .team__name {
+    margin: 5px 0 0 0;
+  }
+
+  .team_position {
+    margin-bottom: 8px;
   }
 
   /* Адаптив portfolio */
@@ -1146,6 +1228,51 @@ textarea {
   .about__inner h2.title {
     font-size: 30px;
   }
+
+  /* Адаптив footer */
+  .footer__soical-list {
+    width: calc(100% / 2);
+  }
+
+  /* адаптив logos */
+  .logos__inner .logos__item {
+    width: 100%;
+  }
+
+  .logos__inner .logos__item img {
+    margin: 0 auto;
+  }
+
+  /* адаптив pricing */
+  .pricing__inner {
+    margin-top: 50px;
+  }
+
+  ul.pricing__items {
+    width: 100%;
+  }
+
+  ul li.pricing__items-num {
+    margin-bottom: 20px;
+  }
+
+  .pricing__items li + li {
+    margin-top: 20px;
+  }
+
+  li a {
+    margin-top: 40px;
+  }
+
+  /* Адаптив team */
+  .team {
+    padding: 50px 0 40px;
+  }
+
+  .team__items {
+    margin-top: 30px;
+  }
+
 
   /* Адаптив slider */
   .slider__block {
