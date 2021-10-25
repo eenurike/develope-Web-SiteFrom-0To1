@@ -76,6 +76,34 @@ body {
   padding: 0 10px;
 }
 
+.common__title {
+  display: flex;
+  justify-content: center;
+}
+
+.common__title h2 {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 600;
+  font-size: 48px;
+  line-height: 56px;
+  letter-spacing: 0.6px;
+  color: #01353E;
+  display: inline-block;
+  margin: 0 auto;
+  position: relative;
+}
+
+.common__title h2::after {
+  content: "";
+  background-image: url("../images/icon/title-line.png");
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 20px;
+  right: -50px;
+  width: 48px;
+  height: 100%;
+}
+
 /* ------------------------------------------------- HEADER ---------------------------------------------- */
 
 .header {
@@ -170,3 +198,105 @@ body {
 .serf__board:hover {
   transform: scale(1.1);
 }
+
+/* ------------------------------------------------- SERF SCHOOL ---------------------------------------------- */
+
+.serf__school--inner {
+  padding: 190px 0 200px;
+}
+
+.serf__content {
+  display: flex;
+  justify-content: center;
+  margin-top: 95px;
+  column-gap: 120px;
+  
+}
+
+.serf__text {
+  max-width: 480px;
+}
+
+.serf__text:last-of-type {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.serf__text p + p {
+  margin-top: 30px;
+}
+
+/* ------------------------------------------------- RECEIVE ---------------------------------------------- */
+
+.receive {
+  padding: 200px 0;
+  background-color: #F8F8F8;
+}
+
+.receive__list {
+  display: flex;
+  justify-content: space-between;
+}
+
+.receive__item--title {
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 25px;
+  letter-spacing: 0.6px;
+  color: #242121;
+
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 10px;
+}
+
+.receive__item {
+  max-width: 350px;
+  margin-top: 100px;
+}
+
+.receive__item--text {
+  margin-top: 10px;
+}
+
+.receive__content {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 100px;
+}
+
+.serf__statistic {
+  max-width: 350px;
+}
+
+.receive__statistick {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.number {
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 18px;
+  letter-spacing: 0.6px;
+  color: #242121;
+  padding-left: 10px;
+}
+
+.serf__statistic--block {
+  display: flex;
+}
+
+.serf__descr {
+  max-width: 600px;
+}
+
+.serf__descr p + p {
+  margin-top: 30px;
+}
+
+
