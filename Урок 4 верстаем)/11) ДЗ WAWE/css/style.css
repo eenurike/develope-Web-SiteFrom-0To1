@@ -380,10 +380,14 @@ body {
   bottom: 0;
   right: 0;
   left: 0;
+  border-radius: 50%;
+  transform: scale(0);
   transition: .3s;
 }
 
 .gallery__item a:hover::after {
+  border-radius: 0;
+  transform: scale(1);
   background: rgba(51, 51, 51, 0.7);
 }
 
