@@ -5,10 +5,6 @@ html {
   box-sizing: border-box;
 }
 
-body {
-  overflow: hidden;
-}
-
 *,
 *::before,
 *::after {
@@ -103,6 +99,8 @@ body {
   content: "";
   background-image: url("../images/icon/title-line.png");
   background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
   position: absolute;
   top: 20px;
   right: -50px;
@@ -247,6 +245,7 @@ body {
 .receive__list {
   display: flex;
   justify-content: space-between;
+  column-gap: 10px;
 }
 
 .receive__item--title {
@@ -771,9 +770,9 @@ textarea {
 
 /* ------------------------------------------------- АДАПТИВ ------------------------------------------------- */
 /* ------------------------------------------------- 1920 ------------------------------------------------- */
-
 /* ------------------------------------------------- HEADER ------------------------------------------------- */
-@media (max-width: 1920px) {
+
+@media (min-width: 1920px) {
   .container {
     max-width: 1920px;
   }
@@ -781,8 +780,14 @@ textarea {
 
 /* ------------------------------------------------- 1024 ------------------------------------------------- */
 
-/* ------------------------------------------------- HEADER ------------------------------------------------- */
 @media (max-width: 1024px) {
+/* Общие отступы через запятую */
+  .serf__school--inner,
+  .receive {
+    padding: 120px 0 140px;   
+  }
+
+/* ------------------------------------------------- HEADER ----------------------------------------------- */
   .header img.wawe__logo {
     max-width: 70%;
   }
@@ -799,12 +804,87 @@ textarea {
   .menu__list a {
     font-size: 21px;
   }
+
+/* ------------------------------------------------- RECEIVE ----------------------------------------------- */
+
+  .receive__item {
+    max-width: 300px;
+  }
+
+}
+
+/* ------------------------------------------------- 890 ------------------------------------------------- */
+
+@media (max-width: 890px) {
+/* ------------------------------------------------- serf school -------------------------------------------- */
+  .serf__content {
+    column-gap: unset;
+    justify-content: space-around;
+  }
+
+  .serf__text {
+    max-width: 45%;
+  }
+
+  /* ------------------------------------------------- title -----------------------------------------------*/
+  .common__title h2 {
+    font-size: 35px;
+  }
+
+  .common__title h2::after {
+    top: 25px;
+    right: -30px;
+    width: 30px;
+    height: 60%;
+  }
+
+  /* ------------------------------------------------- RECEIVE ----------------------------------------------- */
+
+  .receive__list {
+    flex-direction: column;
+
+  }
+
+  .receive__item {
+    max-width: 100%;
+    margin-top: 50px;
+  }
+
+  .receive__item--title {
+    justify-content: flex-start;
+  }
+
+  .receive__item--title p br {
+    display: none;
+  }
+
+  .receive__content {
+    column-gap: 20px;
+    margin-top: 70px;
+  }
+
+  .serf__descr {
+    width: 55%;
+  }
+
+  .receive__statistick {
+    flex-shrink: 0;
+  }
+
 }
 
 /* ------------------------------------------------- 800 ------------------------------------------------- */
-
 /* ------------------------------------------------- HEADER ------------------------------------------------- */
-/* @media (max-width: 800px) {
+@media (max-width: 800px) {
+  .serf__school--inner,
+  .receive {
+    padding: 80px 0 100px;   
+  }
+
+  .header {
+    overflow: hidden;
+  }
+
   ul.menu {
     display: block;
     position: absolute;
@@ -846,15 +926,16 @@ textarea {
     top: 5px;
     width: 40px;
     height: 40px;
+    cursor: pointer;
   }
 
   .burger__menu span {
     display: block;
     position: absolute;
-    height: 2px;
+    height: 3px;
     top: calc(50% - 2px);
     width: 100%;
-    background-color: rgba(13, 48, 44, 1);
+    background-color: white;
   }
 
   .burger__menu span::after,
@@ -863,15 +944,15 @@ textarea {
     position: absolute;
     display: block;
     top: -10px;
-    height: 2px;
+    height: 3px;
     width: 100%;
-    background-color: rgba(13, 48, 44, 1);
+    background-color: white;
     transition: transform .3s;
   }
 
   .burger__menu span::before {
     top: 10px;
-    background-color: rgba(13, 48, 44, 1);
+    background-color: white;
   }
 
   .burger__menu span.span__active {
@@ -887,4 +968,115 @@ textarea {
     transform: rotate(45deg);
     top: 0;
   }
+
+/* ------------------------------------------------- serf school ----------------------------------------- */ 
+
+  .serf__text p + p {
+    margin-top: 15px;
+  } 
+
+/* ------------------------------------------------- receive ----------------------------------------- */ 
+  .receive__content {
+    flex-direction: column;
+  }
+
+  .serf__descr {
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  .serf__descr p + p {
+    margin-top: 10px;
+  } 
+
+  .serf__statistic {
+    max-width: 297px;
+  }
+
+  .serf__statistic--block + p {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+}
+
+/* ------------------------------------------------- 700 ------------------------------------------------- */
+
+@media (max-width: 700px) {
+  /* ------------------------------------------------- title -----------------------------------------------*/
+  .common__title h2 {
+    font-size: 27px;
+  }
+  
+  .common__title h2::after {
+    right: -24px;
+    width: 25px;
+    height: 50%;
+  }
+
+  /* ------------------------------------------------- serf school ----------------------------------------- */ 
+
+  .serf__content {
+    display: block;
+    margin-top: 40px;
+  }
+
+  .serf__text {
+    max-width: 100%;
+  }
+}
+
+/* @media (max-width: 660px) {
+  #bg__img h2::after {
+    top: 20px;
+    right: -50px;
+    width: 48px;
+    height: 100%;
+  }
 } */
+
+/* ------------------------------------------------- 533 ------------------------------------------------- */
+
+
+@media (max-width: 533px) {
+/* ------------------------------------------------- HEADER ------------------------------------------------- */
+  .header img.wawe__logo {
+    max-width: 100%;
+  }
+  .header__text {
+    font-size: 16px;
+  }
+
+/* ------------------------------------------------- title -----------------------------------------------*/
+  
+  .common__title {
+    display: block;
+  }
+
+  .common__title h2 {
+    font-size: 23px;
+  }
+
+  .common__title h2::after {
+    right: -13px;
+    width: 18px;
+    height: 37%;
+  } 
+}
+
+/* ------------------------------------------------- 470 ------------------------------------------------- */
+@media (max-width: 470px) {
+  /* Общие отступы через запятую */
+  .serf__school--inner,
+  .receive {
+    padding: 40px 0 60px;   
+  }
+
+  .serf__content {
+    margin-top: 15px;
+  }
+
+  /* ------------------------------------------------- title -----------------------------------------------*/
+  .common__title h2 {
+    font-size: 15px;
+  }
+}
