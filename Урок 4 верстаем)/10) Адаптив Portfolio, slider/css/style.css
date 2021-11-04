@@ -96,6 +96,23 @@ body {
   background: #FCBB08;
 }
 
+.scroll {
+  background-color: white;
+  box-shadow: 2px 0 5px 3px rgba(3, 3, 3, 0.438);
+  position: sticky;
+  top: 0;
+  transition: .7s;
+  z-index: 9;
+}
+
+.scroll li a {
+  margin-top: 40px;
+}
+
+.scroll .header__top-inner {
+  padding-bottom: 10px;
+}
+
 /* Block 1 header */
 
 .header__top-inner {

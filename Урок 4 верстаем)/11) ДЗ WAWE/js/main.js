@@ -1,4 +1,21 @@
 $(function(){
+  $(document).on('scroll', function() {
+    let top = $(this).scrollTop();
+
+    if(top > 40) {
+      $('.header__top').addClass('translate');
+    } else {
+      $('.header__top').removeClass('translate');
+    }
+
+    if(top > 60) {
+      $('.header__top').addClass('scroll');
+    } else {
+      $('.header__top').removeClass('scroll');
+    }
+
+  });
+
   $('.slider').slick({
     dots: true,
     slidesToShow: 1,

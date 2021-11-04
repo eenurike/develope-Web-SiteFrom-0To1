@@ -1,5 +1,16 @@
 $(function(){
 
+  $(document).on('scroll', function() {
+    let top = $(this).scrollTop();
+
+    if(top > 100) {
+      $('.header__top').addClass('scroll');
+    } else {
+      $('.header__top').removeClass('scroll');
+    }
+
+  });
+
     $('.slider__inner').slick({
         dots: true,
         slidesToShow: 1,
