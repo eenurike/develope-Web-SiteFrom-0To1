@@ -1,6 +1,11 @@
 /* Наш собственный сброс стилей */
 html {
   box-sizing: border-box;
+  /* scroll-behavior: smooth; */
+  /* Плавный скрол когда 
+  <a class="menu__list-link" href="#bla">HOME</a>
+  у ссылки у href указан id, и к нужному блоку указываешь
+  id="bla", но такой способ еще не работает в сафари */
 }
 
 *,

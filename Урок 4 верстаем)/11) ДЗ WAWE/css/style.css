@@ -762,6 +762,19 @@ textarea {
   color: #00B2A0;
 }
 
+.toTop {
+  margin: 0 auto;
+  margin-top: 20px;
+  width: 80px;
+  height: 80px;
+  transition: .6s;
+}
+
+.toTop:hover {
+  transform: scale(1.1);
+}
+
+
 /* ------------------------------------------------- CONTACTS ---------------------------------------------- */
 
 .footer {
@@ -1536,15 +1549,17 @@ textarea {
   background-color: #01353E;
   z-index: 9;
   box-shadow: 3px 0 9px 4px rgba(0, 0, 0, 0.301);
-  transition: .6s;
+  transition: transform .6s;
   transform: translateY(0);
 }
 
 
-
-
-
 .scroll .header__logo {
   margin-left: 20px;
+}
+
+.header__padding {
+  padding-top: 98px;
+  /* Добавляем верхний падинг так как у нас меню становится fixed */
 }
 
