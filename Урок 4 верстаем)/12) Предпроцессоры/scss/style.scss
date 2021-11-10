@@ -1,0 +1,80 @@
+/* СИнтаксис такой же как и в less, причем в scss можем писать и на обычном css */
+
+@import 'myreset';
+/* Подключение файлов */
+
+$default-color: rgb(194, 147, 60);
+$primary-color: rgb(104, 94, 94);
+/* Переменные, и такие переменные можем создавать на любые значения */
+
+%bg {
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* Некие заготовки, которые постоянно попадаются в проекте */
+}
+
+body {
+  background-color: $primary-color;
+  color: $default-color;
+  /* И вставляем переменные на нужные свойства */
+}
+
+/* Синтаксис предпроцессоров */
+
+// .menu {
+//   display: flex;
+//   ul {
+//     align-self: flex-start;
+//     li {
+//       margin: 0;
+//     }
+//   }
+//   a {
+//     color: $default-color;
+//   }
+//    ТО есть не надо три раза писать селектор .menu 
+// }
+
+// .menu {
+//   text-align: center;
+//   &__inner {
+//     display: flex;
+//     justify-content: center;
+//     &-item {
+//       a {
+//         color: yellow;
+//       }
+//     }
+//   }
+// То есть нам не нужно постоянно прописывать .menu__inner .menu__inner-item
+// }
+
+.menu {
+  display: flex;
+  &__inner {
+    max-width: 1000px;
+    background-image: url("images/bla.png");
+    @extend %bg;
+    /* И наша загатовочка вставится, но видим что в компилированынй код, он наша
+    заготовочку вставил в самое начало, но предпроцессор умный пацан, так как,
+    если для других элементов нужны будут какие нибудь другие значения, он просто
+    звготовочку перетрет! ИЛИ */
+  }
+  &__aside {
+    background-image: url("images/loh.jpg");
+    @extend %bg;
+    /* И он не будет дублировать эту нашу заготовку, а запишет через запятую */
+  }
+}
+
+/* Поезная вещь */
+
+.block01 {
+  background-color: rgba(#123eac, .7);
+  /* тоесть в обычном css в rgba нельзя было писать хекс код, чтоб сделать прозрачным,
+  так как мы с макетов копируем цвет в хекс */
+  padding: 30px + 7px;
+  /* такое легкое вычисление одинаковых значений можем посчитать, а например
+  margin: 50% + 10px; такое эже надо с помощью calc */
+}
