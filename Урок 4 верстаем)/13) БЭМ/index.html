@@ -1,12 +1,18 @@
 <!-- 
-  1. Блоку прописывать внешние отступы(margin) нельзя, так как он может быть выдернут,
-  и поставлен куда-то в другое место. Блок это обозначение главного ролитесльского элемент .header
-  2. Дочерний блок .header-top, так же не приемлемы внешние отступы
-  3. Элемент уже выдернуть нельзя, элмент это дочерний элементы родительского блока .header__inner
-  4. Модификатор это обозначает состояние, стилистика(цвет, размер) .header__inner--active
-  или .header--darkTheme
-  5. У каждого тега обязательно должен быть задан класс, даже если его не будешь стилизовать
-  6. Чтоб теги начанались с класса <a class="header__link" href="bla"> а не наоборот
+  1. Блок .header или .search-form. Название блока характиризует смысл (что это?),
+  а не состояние (как выглядит?). Блок не должен влиять на свое окружение, то есть
+  блоку не следует задавать внешние стили (margin,border,position). 
+  В css по бэм так же не рекомендуется испольpовать селекторы по тегам и id
+  2. Элементы - состовная часть блока, которая не может использоваться в 
+  отрыве от него .header__input или .search-form__input. Элемент всегда часть
+  блока, а не элемента, то есть нельзя прописывать .header__elem1__elem2. Когда
+  elem2 вложен в elem1, прописываем так .header__elem2
+  3. Модификаторы - определяет внешний вид, состояние или поведение блока либо элемента
+  .search-form_focused .block_size-s
+  4. Миксы, например если все таки нужно добавить margin boder блоку .header, 
+  class="block block_margin" то есть .header--margin прописываем отступы, и 
+  если надо выдяргивать этот блок чтоб вставить в другое место но без margin,
+  тогда дублированному блоку просто задаем .block без block_margin
  -->
 
  <!DOCTYPE html>
@@ -18,6 +24,190 @@
    <title>Document</title>
  </head>
  <body>
-   
+   <!-- Видим по макету что header навинация повторяется на всех страницах, тогда это 
+  будет блоком, чтоб его можно было засунуть и на другие страницы  -->
+    <header class="header">
+      <div class="container">
+        <!-- Создали два блока header-top и header-content, почему так, это просто
+        из личных предпочтений, так как логично что эти два главных родителя, в которых
+        будет основной контент шапки, но именно header-top будем переносить и на другие страницы -->
+        <div class="header-top">
+          <nav class="menu">
+
+            <ul class="menu__list">
+              <li class="menu__list-item">
+                <!-- Тут list-item это уже не блок а элемент блока, так как перед ним
+                стоит menu__ -->
+                <a class="menu__list-link" href="#"></a>
+              </li>
+              <li class="menu__list-item">
+                <a class="menu__list-link" href="#"></a>
+              </li>
+              <li class="menu__list-item">
+                <a class="menu__list-link" href="#" ></a>
+              </li>
+            </ul>
+          </nav>
+
+          <a class="logo" href="#" >
+            <img class="logo__img" src="путь" alt="logo" >
+          </a>
+
+          <div class="header-control">
+            <button class="header-control__btn"></button>
+          </div>
+          <div class="header-control">
+            <button class="header-control__btn"></button>
+          </div>
+          <div class="header-control">
+            <button class="header-control__btn"></button>
+          </div>
+
+        </div>
+
+        <div class="header-content">
+          <h1 class="header-content__title"></h1>
+
+          <div class="header-content__tabs">
+            <div class="header-content__tabs-buttons">
+              <button class="header-content__tab-btn">
+              <button class="header-content__tab-btn">
+            </div>
+          </div>
+
+          <div class="header-content__tabs-block">
+            <div class="header-content__tab-block">
+              <form class="header-content__form" action="#">
+                <input class="header-content__input" type="text">
+                <input class="header-content__input" type="text">
+                <button class="header-content__button" type="submit"></button>
+              </form>
+            </div>
+            <div class="header-content__tab-block">
+              <form class="header-content__form" action="#">
+                <input class="header-content__input" type="text">
+                <input class="header-content__input" type="text">
+                <button class="header-content__button" type="submit"></button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section class="rental">
+      <div class="container">
+        <!-- Но тут может случится недоумение, типа тогда container мы тоже может
+        хоть куда запихнуть, но мы люди адекватные и понимаем, что container это
+        container и служит для определенных действий. Это такое негласное правило
+        верстальщиков, эти два первых тега они как бы зарезервированы, и всегда
+        так должны писаться, а что после container, там уже можешь извращаться,
+        а этих пацанов не трогай -->
+        <div class="rental-content">
+          <h1 class="rental-content__title"></h1>
+          <p class="rental-content__text"></p>
+          <div class="rental-content__buttonsBlock">
+            <button class="rental-content__btn">
+              <a class="rental-content__btn-link" href="#"></a>
+            </button>
+            <button class="rental-content__btn">
+              <a class="rental-content__btn-link" href="#"></a>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="popularPlaces">
+      <div class="container">
+        <div class="popularPlaces-content">
+          <div class="popularPlaces__item">
+            <h3 class="popularPlaces__item-title"></h3>
+            <a class="popularPlaces__item-link" href="#"></a>
+            <a class="popularPlaces__item-link" href="#"></a>
+          </div>
+          <div class="popularPlaces__item">
+            <h3 class="popularPlaces__item-title"></h3>
+            <a class="popularPlaces__item-link" href="#"></a>
+            <a class="popularPlaces__item-link" href="#"></a>
+          </div>
+          <div class="popularPlaces__item">
+            <h3 class="popularPlaces__item-title"></h3>
+            <a class="popularPlaces__item-link" href="#"></a>
+            <a class="popularPlaces__item-link" href="#"></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="slider">
+      <div class="slider-content">
+        <div class="slider-content-slider-item">
+          <img class="slider-item__imgCar" src="bla" alt="car">
+          <p class="slider-item__ratingCar"></p>
+          <h2 class="slider-item__titleCar"></h2>
+          <h3 class="slider-item__sizeCar"></h3>
+          <p class="slider-item__characteristicCar"></p>
+          <div class="slider-item-navigation">
+            <button class="navigation__btn"></button>
+            <div class="navigation-sideIcons">
+              <div class="sideIcons-content">
+                <img class="content__comments" src="bla" alt="comments">
+                <p class="content__number"></p>
+              </div>
+              <div class="sideIcons-content">
+                <img class="content__viewed" src="bla" alt="viewed">
+                <p class="content__number"></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="rewies">
+      <div class="container">
+        <div class="rewies__inner">
+          <div class="rewies__inner">
+            <div class="rewies__content">
+              <h3 class="rewies__title"></h3>
+              <p class="rewies__text"></p>
+              <div class="rewies__block-link">
+                <a class="rewies__link" href="#"></a>
+                <a class="rewies__link" href="#"></a>
+              </div>
+              <div class="rewies__partners">
+                <img class="partners-logo" src="bla" alt="">
+                <img class="partners-logo" src="bla" alt="">
+                <img class="partners-logo" src="bla" alt="">
+              </div>
+            </div>
+            <img class="rewies__photo" src="bla" alt="photo">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="info">
+      <div class="container">
+        <div class="info__block">
+          <div class="info__app">
+            <div class="info__title"></div>
+            <p class="info__text"></p>
+            <div class="info__link-block">
+              <a class="info__link" href="#">
+                <img class="info__app-img" src="bla" alt="">
+              </a>
+              <a class="info__link" href="#">
+                <img class="info__app-img" src="bla" alt="">
+              </a>
+            </div>
+          </div>
+          <div class="info__newsletter">
+            
+          </div>
+        </div>
+      </div>
+    </section>
  </body>
  </html>
