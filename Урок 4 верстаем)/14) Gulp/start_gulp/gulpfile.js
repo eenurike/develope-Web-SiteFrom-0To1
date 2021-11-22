@@ -7,15 +7,33 @@ gulp установить глобально npm i gulp -g
 
 /* Все плагины скачаивай с nom i --save-dev bla */
 
-const {src, dest, watch} = require('gulp');
+const {src, dest, watch, parallel} = require('gulp');
 /* Деструктурировали наш gulp */
 const scss = require('gulp-sass')(require('sass'));
 /* Компилятор sass/scss */
 const concat = require('gulp-concat');
 /* Обьединение файлов, сжатие файлов в min и переименование файлов */
 const autoprefixer = require('gulp-autoprefixer');
-/* Минификация для js файлов */
+/* Авто префиксер */
 const uglify = require('gulp-uglify');
+/* Минификация для js файлов */
+const imagemin = require('gulp-imagemin');
+/* Плагин для сжатия картинок */
+const browserSync = require('browser-sync').create();
+/* Плагин на типе liveServer, и будем писать именно в styles и scripts
+так как нам нужно чтоб мы следили именно за этими ведь файлами */
+
+
+function browsersync() {
+  browserSync.init({
+    server: {
+        baseDir: "app/"
+    },
+    notify: false
+    /* Чтоб не появлялось уведомление в браузере, что сервер перезагрузился
+    в связи с изменениями в файлах */
+  });
+}
 
 function styles() {
   return src('app/scss/style.scss')
@@ -35,10 +53,12 @@ function styles() {
     grid: true
   }))
   /* Автопрефиксер закидываем перед тем как наш файл выплинется уже компилированной */
-  .pipe(dest('app/css'));
+  .pipe(dest('app/css'))
   /* И выкидываем уже конвертированный файл в папку css, который он сам создаст.
   Обрати внимание на ; только вконце. 
   Так же создаем переменную dest из gulp */
+  .pipe(browserSync.stream());
+  /* Будет обновлять стили без перезагрузки страницы */
 }
 
 /* Так же и со скриптами */
@@ -54,10 +74,18 @@ function scripts() {
   для js нет такого compressed как для css. Нам нужно скачать другой плагин gulp-uglify */
   .pipe(uglify())
   /* Теперь файл минифицирован */
-  .pipe(dest('app/js'));
+  .pipe(dest('app/js'))
   /* И будет помещен в папку js, для пробы скачаем какойто файл js, ну для работы нам
   ведь понадобится jquery, можно скачивать как обычно с официалки, ну а зачем мы изучаем 
   gulp, если и в gulp можно установить jquery >npm i --save-dev jquery */
+  .pipe(browserSync.stream());
+  /* Будет обновлять js без перезагрузкой страницы */
+}
+
+function images() {
+  return src ('app/images/**/*.*')
+  .pipe(imagemin())
+  .pipe(dest('dist/images'));
 }
 
 function watching() {
@@ -66,6 +94,11 @@ function watching() {
   ** это означает что он зайдет в каждую папку в папке scss 
   *.scss это означает что он возмет все файлы с расширением .scss,
   и будет следить за функцией styles */
+  watch(['app/js/**/*.js', '!app/js/main.min.js'], scripts);
+  /* Нам же не нужно что он следил за минифицированным файлом,
+  так что исключаем его с помощью ! */
+  watch(['app/**/*.html']).on('change', browserSync.reload);
+  /* Следим за нашим html и выводим его на страницу с перезагрузкой страницы */
 }
 
 /* Но styles сейчас не заработает */
@@ -74,3 +107,11 @@ exports.styles = styles;
 /* И в терминале прописываешь gulp styles, и в папке css создается файл css */
 exports.scripts = scripts;
 exports.watching = watching;
+exports.images = images;
+exports.browsersync = browsersync;
+/* Но смотрри, теперь нам нужно сделать так чтоб watching и browsersync запускались
+обновременно, в деструктуризации вытаскиваем переменную parallel */
+exports.default = parallel(styles, scripts, browsersync, watching);
+/* Не очень удобно, если постоянно прописываем gulp watching, удобнее будет
+если прописать одно слово gulp, короче что впишешь в default будет открываться
+при одном слове gulp, и в parallel все наши таски будем запускать одновременно */
