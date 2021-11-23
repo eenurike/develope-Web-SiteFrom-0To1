@@ -2,5 +2,50 @@
 @import "fonts";
 @import "reset";
 @import "global";
+
+.header {
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px 0;
+
+    .logo__img {
+      width: 180px;
+    }
+
+    .menu__list {
+      display: flex;
+      column-gap: 40px;
+    }
+
+    .user-nav {
+      position: relative;
+      display: flex;
+      column-gap: 25px;
+
+      span {
+        position: absolute;
+        top: -9px;
+        transform: translateX(13px);
+        width: 20px;
+        height: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        font-size: 12px;
+        background-color: #ff3855;
+        color: white;
+      }
+
+      &__link:last-of-type img{
+        width: 23px;
+      }
+    }
+  }
+}
+
+// Импорт медиа вконце как бы писали медиа запросы
 @import "media";
 
