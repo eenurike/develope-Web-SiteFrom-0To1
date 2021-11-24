@@ -4,27 +4,63 @@
 @import "global";
 
 .header {
+  padding: 40px 0;
+  /* Отступы между основными блоками лучше задавать главным родителям,
+  чтоб при адаптиве при определенном breakpoint через запятую указывать 
+  родителей и им задавать отпределенные отступы */
   &__wrapper {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 40px 0;
 
     .logo__img {
-      width: 180px;
+      min-width: 180px;
     }
 
     .menu__list {
       display: flex;
-      column-gap: 40px;
+      column-gap: 36px;
+
+      &-item {
+        padding: 0 2px;
+        position: relative;
+        
+        &::after {
+        border-bottom: 1px solid #fe3e57;
+        content: "";
+        display: block;
+        position: absolute;
+        bottom: -4px;
+        left: 0;
+        right: 0;
+        transform: scale(0);
+        transition: .5s;
+        }
+
+        &:hover::after {
+          transform: scaleX(1) scaleY(1.5);
+        }
+
+        .menu__list-link {
+          font-weight: bold;
+          color: #707073;
+          transition: .5s;
+        }
+
+        &:hover .menu__list-link {
+          color: #fe3e57;
+        }
+      }
     }
 
     .user-nav {
       position: relative;
       display: flex;
+      align-items: center;
       column-gap: 25px;
+      flex-shrink: 0;
 
-      span {
+      .user-nav__num {
         position: absolute;
         top: -9px;
         transform: translateX(13px);
@@ -41,6 +77,36 @@
 
       &__link:last-of-type img{
         width: 23px;
+      }
+
+      .burger-menu {
+        display: none;
+        &__line {
+          position: relative;
+          display: block;
+          background-color: #707073;
+          width: 30px;
+          height: 2px;
+          transition: .3s;
+
+          &::before,
+          &::after {
+            content: "";
+            position: absolute;
+            display: block;
+            width: 30px;
+            height: 2px;
+            background-color: #707073;
+            transition: .5s;
+          }
+
+          &::after {
+            bottom: 7px;
+          }
+          &::before {
+            top: 7px;
+          }
+        }
       }
     }
   }

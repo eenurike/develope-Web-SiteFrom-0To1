@@ -1,0 +1,36 @@
+@media (max-width: 800px) {
+  .header__wrapper .user-nav .burger-menu {
+    display: block;
+  }
+
+  .menu {
+    position: absolute;
+    // transform: translateX(150%);
+    left: -100%;
+    top: 110px;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.397);
+    transition: left .5s;
+    // height: 100vh;
+  }
+
+  .menu-active {
+    left: 0;
+  }
+
+  .burger-menu__active {
+    background-color: transparent !important;
+    &::after {
+      transform: rotate(-45deg);
+      bottom: 0 !important;
+      // transition: .5s;
+    }
+
+    &::before {
+      transform: rotate(45deg);
+      top: 0 !important;
+      // transition: .5s;
+    }
+  }
+}
