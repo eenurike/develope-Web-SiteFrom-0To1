@@ -19,18 +19,16 @@
     left: 0;
   }
 
-  .burger-menu__active {
-    background-color: transparent !important;
+  .header__wrapper .user-nav .burger-menu__active {
+    background-color: transparent;
     &::after {
       transform: rotate(-45deg);
-      bottom: 0 !important;
-      // transition: .5s;
+      bottom: 0;
     }
 
     &::before {
       transform: rotate(45deg);
-      top: 0 !important;
-      // transition: .5s;
+      top: 0;
     }
   }
 }

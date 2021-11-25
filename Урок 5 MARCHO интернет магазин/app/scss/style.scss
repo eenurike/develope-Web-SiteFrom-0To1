@@ -26,11 +26,12 @@
         position: relative;
         
         &::after {
-        border-bottom: 1px solid #fe3e57;
+        background-color: $accent;
         content: "";
         display: block;
         position: absolute;
         bottom: -4px;
+        height: 1.5px;
         left: 0;
         right: 0;
         transform: scale(0);
@@ -38,17 +39,24 @@
         }
 
         &:hover::after {
-          transform: scaleX(1) scaleY(1.5);
+          transform: scale(1);
+        }
+
+        &--active::after {
+          transform: scale(1);
         }
 
         .menu__list-link {
           font-weight: bold;
           color: #707073;
           transition: .5s;
+          &--active {
+            color: $accent;
+          }
         }
 
         &:hover .menu__list-link {
-          color: #fe3e57;
+          color: $accent;
         }
       }
     }
@@ -71,7 +79,7 @@
         align-items: center;
         border-radius: 50%;
         font-size: 12px;
-        background-color: #ff3855;
+        background-color: $accent;
         color: white;
       }
 
@@ -81,6 +89,7 @@
 
       .burger-menu {
         display: none;
+
         &__line {
           position: relative;
           display: block;
@@ -111,6 +120,7 @@
     }
   }
 }
+
 
 // Импорт медиа вконце как бы писали медиа запросы
 @import "media";
