@@ -47,11 +47,12 @@
         }
 
         .menu__list-link {
-          font-weight: bold;
+          @extend %roboto-400;
           color: #707073;
           transition: .5s;
           &--active {
             color: $accent;
+            @extend %roboto-700;
           }
         }
 
