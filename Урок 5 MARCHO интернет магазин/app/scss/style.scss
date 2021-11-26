@@ -13,10 +13,6 @@
     justify-content: space-between;
     align-items: center;
 
-    .logo__img {
-      min-width: 180px;
-    }
-
     .menu__list {
       display: flex;
       column-gap: 36px;
@@ -48,7 +44,7 @@
 
         .menu__list-link {
           @extend %roboto-400;
-          color: #707073;
+          color: #29282d;
           transition: .5s;
           &--active {
             color: $accent;
@@ -116,6 +112,26 @@
           &::before {
             top: 7px;
           }
+        }
+      }
+    }
+  }
+}
+
+.footer {
+  &-bottom {
+    &__payment {
+      &-img {
+        &.mastercard {
+          width: 33px;
+        }
+
+        &.visa {
+          width: 28px;
+        }
+
+        &.paypal {
+          width: 75px;
         }
       }
     }

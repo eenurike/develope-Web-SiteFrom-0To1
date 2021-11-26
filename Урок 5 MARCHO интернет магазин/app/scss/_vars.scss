@@ -3,6 +3,7 @@ $accent: #fe3e57;
 $default: #8d8d8d;
 $title: #29282d;
 
+/* Примеси со шрифтами */
 %quicksand-400 {
   font-family: 'Quicksand-Regular', sans-serif;
   font-weight: 400;
@@ -16,6 +17,11 @@ $title: #29282d;
 %roboto-400 {
   font-family: 'Roboto-Regular', sans-serif;
   font-weight: 400;
+}
+
+%roboto-500 {
+  font-family: 'Roboto-Medium', sans-serif;
+  font-weight: 500;
 }
 
 %roboto-700 {
