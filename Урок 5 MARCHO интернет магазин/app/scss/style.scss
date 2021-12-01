@@ -119,19 +119,17 @@
 }
 
 .footer {
-  &-bottom {
-    &__payment {
-      &-img {
-        &.mastercard {
-          width: 33px;
+  &-top {
+    &__social {
+      &-link {
+
+        path {
+          fill: $default !important;
+          transition: .5s;
         }
 
-        &.visa {
-          width: 28px;
-        }
-
-        &.paypal {
-          width: 75px;
+        &:hover path{
+          fill: $accent !important;
         }
       }
     }
