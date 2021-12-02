@@ -27,7 +27,7 @@
         display: block;
         position: absolute;
         bottom: -4px;
-        height: 1.5px;
+        height: 2px;
         left: 0;
         right: 0;
         transform: scale(0);
@@ -119,19 +119,124 @@
 }
 
 .footer {
+  background-color: $bg-footer;
+  padding: 70px 0 27px 0;
+  /* Чтоб при адаптиве легче через запятую перечислить несколько блоков и одним
+  значением задать, тступ сверху вообще 76, но нужно учитывать зарезервированный line height у текста */
   &-top {
-    &__social {
-      &-link {
+    padding-bottom: 42px;
+    /*  */
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #ececec;
+    column-gap: 20px;
 
+    // &__item,
+    // &__list {
+    //    Этот item родитель contact links social и т.д. не обязательно чтоб дочерние элементы
+    //   прям шли в нем, можно написать отдельно как в обычном css
+    //   display: flex;
+    //   flex-direction: column;
+    // }
+
+    &__adress,
+    &__email,
+    &__phone,
+    &__list {
+      line-height: 36px;
+      /* Незабывай что ты отступы между ссылками или текстом можешь делать
+      с помощью line-height!!! */
+    }
+
+    &__title {
+      @extend %roboto-500;
+      font-size: 22px;
+      margin-bottom: 33px;
+    }
+
+    &__contact {
+      width: 250px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    &__links {
+      width: 170px;
+
+      .footer-top__list-item:hover .footer-top__list-link {
+        color: $accent;
+      } 
+
+      .footer-top__list-link {
+        transition: .3s;
+      }
+    }
+
+    &__subscribe {
+      width: 470px;
+    }
+
+    &__social {
+      display: flex;
+      column-gap: 18px;
+      margin-top: 35px;
+
+      &-link {
         path {
-          fill: $default !important;
+          fill: $default;
           transition: .5s;
         }
 
         &:hover path{
-          fill: $accent !important;
+          fill: $accent;
         }
       }
+    }
+
+    &__form {
+      display: flex;
+      margin-top: 25px;
+
+      &-input {
+        flex-grow: 1;
+        margin-right: 6px;
+        height: 50px;
+        padding-left: 15px;
+        @extend %quicksand-500;
+        color: $default;
+        border-radius: 3px;
+        border: none;
+        outline: none;
+
+        &::placeholder {
+          @extend %quicksand-500;
+          color: $default;
+        }
+      }
+
+      &-button {
+        padding: 0 25px;
+        background-color: $accent;
+        border: none;
+        border-radius: 3px;
+        transition: .5s;
+
+        &:hover {
+          transform: scale(1.03);
+          box-shadow: 0 0 5px 3px rgba(128, 128, 128, 0.507);
+        }
+      }
+    }
+  }
+
+  &-bottom {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 27px;
+
+    &__payment {
+      display: flex;
+      column-gap: 10px;
     }
   }
 }
