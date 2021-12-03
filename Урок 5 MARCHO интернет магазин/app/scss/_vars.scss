@@ -8,6 +8,7 @@ $bg-footer: #f6f6f6;
 /* Примеси со шрифтами */
 %quicksand-400 {
   font-family: 'Quicksand-Regular', sans-serif;
+  /* Если произойдут проблемы с этим шрифтом, он подключит шрифт просто без засечек */
   font-weight: 400;
 }
 

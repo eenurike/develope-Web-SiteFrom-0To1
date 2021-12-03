@@ -1,9 +1,19 @@
 body,
 html {
   font-size: 16px;
-  line-height: 26px;
   color: $default;
   @extend %quicksand-500;
+  height: 100%;
+  /* Эта высота для того чтоб прижать футер к низу */
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+.main {
+  flex-grow: 1;
 }
 
 .wrapper {
@@ -23,8 +33,26 @@ html {
 a, 
 p {
   color: $default;
+  line-height: 26px;
 }
 
 .title {
   color: $title;
+}
+
+.button {
+  padding: 0 22px;
+  background-color: $accent;
+  border: none;
+  border-radius: 3px;
+  transition: .5s;
+  text-transform: uppercase;
+  cursor: pointer;
+  color: white;
+  box-shadow: 0px 7px 20px 0px rgba(255, 17, 48, 0.3);
+  letter-spacing: 2px;
+
+  &:hover {
+    transform: scale(1.03);
+  }
 }

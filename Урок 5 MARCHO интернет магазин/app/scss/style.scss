@@ -45,7 +45,8 @@
         .menu__list-link {
           @extend %roboto-400;
           color: #29282d;
-          transition: .5s;
+          transition: .3s;
+
           &--active {
             color: $accent;
             @extend %roboto-700;
@@ -54,6 +55,7 @@
 
         &:hover .menu__list-link {
           color: $accent;
+          @extend %roboto-700;
         }
       }
     }
@@ -131,21 +133,19 @@
     border-bottom: 1px solid #ececec;
     column-gap: 20px;
 
-    // &__item,
-    // &__list {
-    //    Этот item родитель contact links social и т.д. не обязательно чтоб дочерние элементы
-    //   прям шли в нем, можно написать отдельно как в обычном css
-    //   display: flex;
-    //   flex-direction: column;
-    // }
-
-    &__adress,
-    &__email,
-    &__phone,
     &__list {
-      line-height: 36px;
+      // line-height: 36px;
       /* Незабывай что ты отступы между ссылками или текстом можешь делать
-      с помощью line-height!!! */
+      с помощью line-height!!! Уберем этот line height, это не правильно, так как
+      если будет длинный тескт переносящийся на другую строку, этот перенос
+      будет выглядить так как будто это чтото */
+      row-gap: 10px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    &__email {
+      margin: 10px 0;
     }
 
     &__title {
@@ -200,13 +200,13 @@
       &-input {
         flex-grow: 1;
         margin-right: 6px;
-        height: 50px;
-        padding-left: 15px;
+        padding: 15px;
         @extend %quicksand-500;
         color: $default;
         border-radius: 3px;
         border: none;
         outline: none;
+        box-shadow: 0px 7px 20px 0px rgba(192, 192, 192, 0.3);
 
         &::placeholder {
           @extend %quicksand-500;
@@ -214,18 +214,21 @@
         }
       }
 
-      &-button {
-        padding: 0 25px;
-        background-color: $accent;
-        border: none;
-        border-radius: 3px;
-        transition: .5s;
+      // &-button {
+      //   padding: 0 22px;
+      //   background-color: $accent;
+      //   border: none;
+      //   border-radius: 3px;
+      //   transition: .5s;
+      //   text-transform: uppercase;
+      //   cursor: pointer;
+      //   color: white;
+      //   box-shadow: 0px 7px 20px 0px rgba(255, 17, 48, 0.3);
 
-        &:hover {
-          transform: scale(1.03);
-          box-shadow: 0 0 5px 3px rgba(128, 128, 128, 0.507);
-        }
-      }
+      //   &:hover {
+      //     transform: scale(1.03);
+      //   }
+      // }
     }
   }
 
@@ -238,6 +241,24 @@
       display: flex;
       column-gap: 10px;
     }
+  }
+}
+
+.top-slider {
+  
+
+  &__title {
+    @extend %roboto-700;
+    font-size: 58px;
+  }
+
+  &__text {
+    width: 460px;
+  }
+
+  &__link {
+    padding: 19px 23px;
+    display: inline-block;
   }
 }
 
