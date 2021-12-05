@@ -1,6 +1,7 @@
 @import "vars";
 @import "fonts";
 @import "reset";
+@import "libs";
 @import "global";
 
 .header {
@@ -121,7 +122,7 @@
 }
 
 .footer {
-  background-color: $bg-footer;
+  background-color: $bg;
   padding: 70px 0 27px 0;
   /* Чтоб при адаптиве легче через запятую перечислить несколько блоков и одним
   значением задать, тступ сверху вообще 76, но нужно учитывать зарезервированный line height у текста */
@@ -245,20 +246,97 @@
 }
 
 .top-slider {
-  
+  background-color: $bg;
+  padding-top: 70px;
+  background-image: url("../images/slider/slider-bg.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position-y: 30%;
+
+  .container {
+    max-width: 1520px;
+    padding-left: 160px;
+  }
+
+  &__item {
+    display: flex !important;
+  }
+
+  &__content {
+    // display: flex;
+    // flex-direction: column;
+    // justify-content: center;
+    // align-items: flex-start;
+    padding-top: 125px;
+    padding-left: 20px;
+  }
 
   &__title {
     @extend %roboto-700;
     font-size: 58px;
+    margin-bottom: 35px;
+    width: 660px;
   }
 
   &__text {
-    width: 460px;
+    max-width: 460px;
+    margin-bottom: 55px;
   }
 
   &__link {
-    padding: 19px 23px;
+    padding: 17px 34px;
     display: inline-block;
+  }
+
+  .slick-dots {
+    display: flex;
+    position: absolute;
+    bottom: 38px;
+    right: 51%;
+    column-gap: 7px;
+
+      li {
+        border-radius: 50%;
+        line-height: 0;
+
+      button {
+        border: none;
+        padding: 0;
+        font-size: 0;
+        background-color: transparent;
+        width: 26px;
+        height: 26px;
+        border-radius: 50%;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+
+        &::before {
+          content: "";
+          width: 6px;
+          height: 6px;
+          transform: scale(.9);
+          border-radius: 50%;
+          background-color: $default;
+          position: absolute;
+          transition: .3s;
+        }
+      }
+
+      &.slick-active button {
+        border: 1px solid $accent;
+
+        &::before {
+          background-color: $accent;
+        }
+      }
+
+      &:hover button::before {
+        background-color: red;
+      }
+    }
   }
 }
 

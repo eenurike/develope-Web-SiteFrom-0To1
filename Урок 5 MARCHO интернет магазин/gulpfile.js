@@ -68,6 +68,8 @@ function scripts() {
   return src([
     'node_modules/jquery/dist/jquery.js',
     /* Зачем путь указывать к минифицированной версии, если мы будем сжимать файл */
+    'node_modules/slick-carousel/slick/slick.js',
+    /* Подключили slick слайдер */
     'app/js/main.js'
     /* Файлов js может быть много, так что записываем в квадратных скобках */
   ])
