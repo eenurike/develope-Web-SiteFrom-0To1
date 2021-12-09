@@ -1,4 +1,5 @@
-/* libs это то где хранятся все библеотеки */
+/* libs это то где хранятся все библеотеки, это просто как если бы пожключали через link в html */
 
 @import "../../node_modules/slick-carousel/slick/slick.scss";
 /* Усли прописать просто css, то он просто закинет этот путь в виде строки */
+@import "../../node_modules/@fancyapps/ui/dist/fancybox";

@@ -40,7 +40,14 @@ p {
   color: $title;
 }
 
+.common-title {
+  @extend %roboto-700;
+  font-size: 48px;
+  text-align: center;
+}
+
 .button {
+  display: inline-block;
   padding: 0 22px;
   background-color: $accent;
   border: none;
@@ -54,5 +61,6 @@ p {
 
   &:hover {
     transform: scale(1.03);
+    box-shadow: 0px 7px 20px 0px rgba(255, 17, 48, 0.5);
   }
 }

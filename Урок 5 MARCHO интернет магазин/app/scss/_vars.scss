@@ -31,3 +31,16 @@ $bg: #f6f6f6;
   font-family: 'Roboto-Bold', sans-serif;
   font-weight: 700;
 }
+
+%links-hover {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  right: 0;
+  width: 100%;
+  height: 1px;
+  background-color: $accent;
+  transform: scale(0);
+  transition: .3s;
+}
+

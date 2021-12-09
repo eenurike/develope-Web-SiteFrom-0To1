@@ -256,6 +256,7 @@
   .container {
     max-width: 1520px;
     padding-left: 160px;
+    /* увеличили container чтоб рука девушки была как на макете */
   }
 
   &__item {
@@ -336,6 +337,258 @@
       &:hover button::before {
         background-color: red;
       }
+    }
+  }
+}
+
+.categories-info {
+  padding: 120px 0;
+  background: url('../images/categories/decorate-bg/bg-left.svg') left 44%,
+              url('../images/categories/decorate-bg/bg-right.svg') right 44%;
+  background-repeat: no-repeat;
+  background-size: 11%;
+
+
+  .info {
+    display: flex;
+    column-gap: 30px;
+    margin-bottom: 120px;
+    position: relative;
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      z-index: -1;
+    }
+
+    &::before {
+      top: -40px;
+      left: -40px;
+      background-image: url('../images/categories/decorate-bg/circle.svg');
+      width: 120px;
+      height: 120px;
+    }
+
+    &::after {
+      bottom: -23px;
+      right: -23px;
+      background-image: url('../images/categories/decorate-bg/square.svg');
+      width: 65px;
+      height: 52px;
+    }
+
+    &__item {
+      padding: 60px 40px;
+      box-shadow: 20px 0px 60px 0px rgba(202, 202, 202, 0.35);
+      background-color: #fff;
+      /* z index не работал потому что фон контенеров был прозрачный!! */
+    }
+
+    &__img {
+      margin-bottom: 40px;
+    }
+
+    &__title {
+      @extend %roboto-400;
+      font-size: 22px;
+      margin-bottom: 13px;
+    }
+  }
+
+  .categories {
+    &__text {
+      max-width: 570px;
+      text-align: center;
+      margin: 15px auto 60px;
+      // margin-top: 15px;
+    }
+
+    &__inner {
+      display: grid;
+      min-height: 635px;
+      /* Для гридовых элементов нужно указывать высоту */
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      gap: 30px;
+    }
+
+    &__item {
+      padding: 38px;
+
+      &-text {
+        @extend %quicksand-400;
+        color: #6d34ee;
+      }
+
+      &-title {
+        @extend %roboto-500;
+        font-size: 22px;
+      }
+
+      &-link {
+        @extend %roboto-400;
+        text-transform: uppercase;
+        color: black;
+        position: relative;
+        transition: .3s;
+      }
+
+      &:nth-child(1) {
+        // background-image: url('../images/categories/shoes\ &\ jewellry.jpg');
+        /* По макету видно что эти картинки будут меняться, и бэкендер имеет доступ только к html, чтоб он мог вставить другую картинку  */
+        grid-row: span 2;
+
+        .categories__item-text,
+        .categories__item-link:hover,
+        .categories__item-link::before {
+          color:#6d34ee;
+        }
+
+        .categories__item-link::before {
+          @extend %links-hover;
+          background-color: #6d34ee;
+        }
+
+        .categories__item-link:hover::before {
+          transform: scale(1);
+        }
+
+      }
+
+      &:nth-child(2) {
+        // background-image: url('../images/categories/clother\ &\ accessories.jpg');
+
+        grid-column: span 2;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        .categories__item-text,
+        .categories__item-link:hover,
+        .categories__item-link::before  {
+          color: #ff4b63;
+        }
+
+        .categories__item-link {
+          align-self: flex-start;
+        }
+
+        .categories__item-link::before {
+          @extend %links-hover;
+          background-color: #ff4b63;
+        }
+
+        .categories__item-link:hover::before {
+          transform: scale(1);
+        }
+
+      }
+
+      &:nth-child(3) {
+        // background-image: url('../images/categories/men\ fashoin.jpg');
+
+        .categories__item-text,
+        .categories__item-link:hover,
+        .categories__item-link::before {
+          color: #ffbb29;
+          
+        }
+
+        .categories__item-link::before {
+          @extend %links-hover;
+          background-color: #ffbb29; 
+        }
+
+        .categories__item-link:hover::before {
+          transform: scale(1);
+        }
+      }
+
+      &:nth-child(4) {
+        // background-image: url('../images/categories/girl\ fashion.jpg');
+
+        .categories__item-text,
+        .categories__item-link:hover,
+        .categories__item-link::before {
+          color: #00cbff;
+        }
+
+        .categories__item-link::before {
+          @extend %links-hover;
+          background-color: #00cbff;
+        }
+
+        .categories__item-link:hover::before {
+          transform: scale(1);
+        }
+      }
+    }
+  }
+}
+
+.video-fashion {
+  padding: 120px 0;
+  background-color: #f6f6f6;
+  background-image: url('../images/video/bg.svg');
+
+  &__inner {
+    display: flex;
+    // column-gap: 63px;
+    justify-content: space-between;
+  }
+
+  &__video {
+    // width: 50%;
+    max-width: 535px;
+    /* Незнаю почему этот maxwidth не работает, а с width 100% работает */
+    width: 100%;
+    background-image: url('../images/video/video-popup.jpg');
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__img {
+    width: 90px;
+    height: 90px;
+    background-color: $accent;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 7px 20px 0px rgba(255, 17, 48, 0.6);
+    transition: .5s;
+
+    &:hover {
+      transform: scale(1.2);
+      box-shadow: 0px 7px 20px 0px rgba(255, 17, 48, 0.8);
+    }
+  }
+
+  &__content {
+    max-width: 570px;
+    padding: 67px 0;
+    text-align: left;
+
+    &-subtitle {
+      margin-bottom: 20px;
+      @extend %quicksand-400;
+      font-size: 22px;
+      color: $accent;
+    }
+
+    .title {
+      text-align: inherit;
+      margin-bottom: 30px;
+    }
+
+    &-text {
+      margin-bottom: 50px;
+    }
+
+    &-link {
+      padding: 17px 28px;
     }
   }
 }
