@@ -70,6 +70,8 @@ function scripts() {
     /* Зачем путь указывать к минифицированной версии, если мы будем сжимать файл */
     'node_modules/slick-carousel/slick/slick.js',
     /* Подключили slick слайдер */
+    'node_modules/swiper/swiper-bundle.min.js',
+    /* Подключил слайдер swiper для теста */
     'node_modules/@fancyapps/ui/dist/fancybox.umd.js',
     /* Подключили fancybox */
     'app/js/main.js'

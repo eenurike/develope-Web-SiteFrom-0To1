@@ -8,8 +8,19 @@ $(function(){
     dots: true,
     arrows: false,
     fade: false,
-    autoplay: true,
+    autoplay: false,
     autoplaySpeed: 2000
+  });
+
+ /* TEST */
+
+  const swiper = new Swiper('.swiper', {
+    slidesPerView: 1,
+    spaceBetween: 200,
+    // pagination: {
+    //   el: ".swiper-pagination",
+    //   dynamicBullets: true,
+    // },
   });
 });
 
