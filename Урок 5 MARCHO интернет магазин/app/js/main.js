@@ -12,6 +12,7 @@ $(function(){
     autoplaySpeed: 2000
   });
 
+  
  /* TEST */
 
   const swiper = new Swiper('.swiper', {
