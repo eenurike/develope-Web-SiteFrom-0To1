@@ -12,7 +12,20 @@ $(function(){
     autoplaySpeed: 2000
   });
 
-  
+
+ 
+  $(".stars").rateYo({
+    starWidth: "16px",
+    // rating    : 4,
+    /* Но нам это не подходит, ведь нам нужно задавать каждому одельный рейтинг, нужно найти 
+    дата атрибут и не посредствено вставить в html */
+    spacing   : "5px",
+    normalFill: "#ccccce",
+    ratedFill: "#ffc35b",
+    readOnly: true
+  });
+   
+
  /* TEST */
 
   const swiper = new Swiper('.swiper', {

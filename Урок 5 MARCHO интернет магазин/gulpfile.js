@@ -74,6 +74,8 @@ function scripts() {
     /* Подключил слайдер swiper для теста */
     'node_modules/@fancyapps/ui/dist/fancybox.umd.js',
     /* Подключили fancybox */
+    'node_modules/rateyo/src/jquery.rateyo.js',
+    /* Подключили звездный рейтинг */
     'app/js/main.js'
     /* Файлов js может быть много, так что записываем в квадратных скобках */
   ])

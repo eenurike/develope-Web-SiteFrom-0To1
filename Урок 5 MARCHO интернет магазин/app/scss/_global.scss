@@ -10,10 +10,12 @@ html {
 body {
   display: flex;
   flex-direction: column;
+  /* Для структуры чтоб футер был прижат к низу */
 }
 
 .main {
   flex-grow: 1;
+  /* Для структуры чтоб футер был прижат к низу */
 }
 
 .wrapper {
@@ -62,5 +64,24 @@ p {
   &:hover {
     transform: scale(1.03);
     box-shadow: 0px 7px 20px 0px rgba(255, 17, 48, 0.5);
+  }
+}
+
+.sale {
+  &::after {
+    content: 'SALE';
+    position: absolute;
+    // width: 60px;
+    // height: 30px;
+    padding: 7px 9px;
+    top: 25px;
+    left: 25px;
+    background-color: $accent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @extend %roboto-400;
+    letter-spacing: 1px;
+    color: white;
   }
 }
