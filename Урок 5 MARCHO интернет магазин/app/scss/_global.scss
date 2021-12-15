@@ -67,6 +67,17 @@ p {
   }
 }
 
+.common-link {
+  @extend %roboto-400;
+  letter-spacing: 2px;
+  color: black;
+  padding: 16px 26px;
+  border: 1px solid $accent;
+  cursor: pointer;
+  text-transform: uppercase;
+  display: inline-block;
+}
+
 .sale {
   &::after {
     content: 'SALE';
