@@ -1,6 +1,10 @@
 Обычно svg скачиваются большого размера, нужно зайти на специальные сервисы, в поисковике пишешь "изменить размер svg" чтобы изменить размер
 Типа скачиваешь с fontawesoma какую нибудь иконку, и на всяких сервисах меняшь размер на нужный
 
+backgrpund-image: можно вставить сразу несколько одновременно
+background: url('../images/categories/decorate-bg/bg-left.svg') left 44%,
+            url('../images/categories/decorate-bg/bg-right.svg') right 44%;
+
 Структура сайта должна быть такая, чтоб футер всегда был прижат к низу страницы, и такая структура будет на каждой странице
 <header></header>
 <main> Тут весь основной контент </main>
@@ -44,3 +48,5 @@ View on GitHub -> Внизу Package Managers ну и установка npm i -
 Ураааа я сам подключил свайпер слайдер через npm смотри на сайте https://swiperjs.com/
 
 Так же скачали плагин rateyo для звездного рейтинга https://rateyo.fundoocode.ninja/, но скачаем предыдущую версию, так как новая версия в альфе и она подгючивает npm i rateyo@2.3.2 --save-dev
+
+Таймер плагин взял с codeopen https://codepen.io/SitePoint/pen/NWxKgxN
