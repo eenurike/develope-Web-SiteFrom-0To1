@@ -422,7 +422,10 @@
         <div class="promo__inner">
           <p class="promo__subtitle">Style Fashion</p>
           <h3 class="common-title title">DEAL OF THE DAY</h3>
-          <div id="clockdiv">
+          <div id="clockdiv" data-time="'2021-12-31'">
+            <!-- На релальных проектах ты должен менять все id class в плагины на свои!!!
+            Ставим наши кастомные цифры в html, устанавливаем дата атрибут, и в атрибут в таком формате
+            уствнавливаем конечную дату -->
             <div>
               <span class="days"></span>
               <div class="smalltext">Days</div>
@@ -480,6 +483,75 @@
         </ul>
       </div>
     </div>
+
+    <section class="blog">
+      <div class="container">
+        <h3 class="common-title title">
+          From Our Blog
+        </h3>
+        <p class="blog__text">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmodmoe tempor incididunt ut labore et dolore aliqua.
+        </p>
+
+        <div class="blog__inner">
+          <div class="blog__item">
+            <!-- По макету фидим чтоб это статьи, в ствтьях все ссылки, пользователь кликает на картинку переходит на статью,
+            коикает на автора переходит на все статьи автора, кликает на заголовок переходит на статью, кликает на
+            спец. кнопку переходит на стаью, делаем для удобства пользователя -->
+            <a class="blog__item-imglink" href="#" >
+              <img src="images/blog/1.jpg" alt="blog image">
+            </a>
+            <div class="blog__content">
+              <div class="blog__content-info">
+                <a class="blog__content-author" href="#">By Admin</a>
+                <div class="blog__content-date">10 January, 2020</div>
+              </div>
+              <a class="blog__content-titlelink" href="#">
+                <h4 class="blog__content-title title">Our Apps User Use Mobile On His Mobile</h4>
+                <!-- Теперь в современных реалях можно вставлять внутрь строчных элементов блочные элементы -->
+              </a>
+              <a class="blog__content-link" href="#">
+                Read More
+              </a>
+            </div>
+          </div>
+          <div class="blog__item">
+            <a class="blog__item-imglink" href="#" >
+              <img src="images/blog/2.jpg" alt="blog image">
+            </a>
+            <div class="blog__content">
+              <div class="blog__content-info">
+                <a class="blog__content-author" href="#">By Admin</a>
+                <div class="blog__content-date">10 January, 2020</div>
+              </div>
+              <a class="blog__content-titlelink" href="#">
+                <h4 class="blog__content-title title">Our Apps User Use Mobile On His Mobile</h4>
+              </a>
+              <a class="blog__content-link" href="#">
+                Read More
+              </a>
+            </div>
+          </div>
+          <div class="blog__item">
+            <a class="blog__item-imglink" href="#" >
+              <img src="images/blog/3.jpg" alt="blog image">
+            </a>
+            <div class="blog__content">
+              <div class="blog__content-info">
+                <a class="blog__content-author" href="#">By Admin</a>
+                <div class="blog__content-date">10 January, 2020</div>
+              </div>
+              <a class="blog__content-titlelink" href="#">
+                <h4 class="blog__content-title title">Our Apps User Use Mobile On His Mobile</h4>
+              </a>
+              <a class="blog__content-link" href="#">
+                Read More
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
   </main>
 
