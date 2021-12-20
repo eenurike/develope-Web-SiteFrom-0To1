@@ -791,6 +791,11 @@
 
 .blog {
   padding-bottom: 165px;
+  background-color: #fcfcfc;
+  background-image: url("../images/blog/blog-bg.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center 80%;
 
   .title {
     margin-bottom: 20px;
@@ -810,12 +815,23 @@
 
   &__item {
     max-width: 370px;
+    transition: .3s;
+
+    &:hover {
+      box-shadow: 0px 0px 60px 20px rgba(202, 202, 202, 0.35);
+      background-color: #fff;
+    }
   }
 
   &__content {
+    padding: 26px 0;
     border-bottom: 1px solid #ececec;
     border-left: 1px solid #ececec;
     border-right: 1px solid #ececec;
+
+    &:hover {
+      border: none;
+    }
 
     &-title {
       margin: 0 auto;
@@ -829,12 +845,38 @@
       max-width: 300px;
       display: flex;
       justify-content: space-between;
+      margin-bottom: 23px;
+    }
+
+    &-author {
+      display: flex;
+      align-items: center;
+      column-gap: 8px;
+    }
+
+    &-date {
+      display: flex;
+      align-items: center;
+      column-gap: 8px;
     }
 
     &-link {
       margin: 0 auto;
       max-width: 300px;
       display: block;
+      transition: .3s;
+
+      svg path {
+        transition: .3s;
+      }
+
+      &:hover {
+        color: $accent;
+      }
+
+      &:hover svg path{
+        fill: $accent;
+      }
     }
   }
 }
