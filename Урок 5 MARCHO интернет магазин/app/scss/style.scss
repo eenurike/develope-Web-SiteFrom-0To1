@@ -888,6 +888,38 @@
   }
 }
 
+/* ЭТО УЖЕ НОВАЯ СТРАНИЦА */
+
+.top {
+  &__container {
+    background-image: url("../images/common/top-bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    padding: 130px 0 138px;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__title {
+    @extend %roboto-400;
+    font-size: 48px;
+    color: #15181d;
+    margin-bottom: 20px;
+  }
+
+  &__link {
+    color: #868686;
+  }
+
+  
+}
+
 
 // Импорт медиа вконце как бы писали медиа запросы
 @import "media";

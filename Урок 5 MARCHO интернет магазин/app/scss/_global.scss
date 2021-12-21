@@ -22,6 +22,11 @@ body {
   overflow: hidden;
 }
 
+.top__container {
+  max-width: 1770px;
+  margin: 0 auto;
+}
+
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -96,3 +101,42 @@ p {
     color: white;
   }
 }
+
+.breadcrumbs {
+  &__item {
+    &:last-child .breadcrumbs__link {
+      color: $accent;
+    }
+  }
+
+  &__list {
+    display: flex;
+    column-gap: 14px;
+
+    .home::before {
+      content: "";
+      background-image: url("../images/common/home-icon.svg");
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 16px;
+      height: 16px;
+    }
+  }
+
+  &__link {
+    padding-left: 23px;
+    position: relative;
+
+    &::before {
+      content: "";
+      background-image: url("../images/common/angle_right.svg");
+      position: absolute;
+      top: 6px;
+      left: 0;
+      width: 9px;
+      height: 10px;
+    }
+  }
+}
+

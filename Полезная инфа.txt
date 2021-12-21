@@ -50,3 +50,5 @@ View on GitHub -> Внизу Package Managers ну и установка npm i -
 Так же скачали плагин rateyo для звездного рейтинга https://rateyo.fundoocode.ninja/, но скачаем предыдущую версию, так как новая версия в альфе и она подгючивает npm i rateyo@2.3.2 --save-dev
 
 Таймер плагин взял с codeopen https://codepen.io/SitePoint/pen/NWxKgxN
+
+Если много страничный сайт, то естественно много html файлов, но у нас ведь gulp а именно browser sync подключен к одной странице, чтоб смотреть на другую html страницу, пишем http://localhost:3000/название-страницы.html
