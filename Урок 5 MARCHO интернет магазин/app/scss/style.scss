@@ -200,6 +200,8 @@
 
       &-input {
         flex-grow: 1;
+        flex-shrink: 1;
+        /* Инпут фиксированный элемент, и чтоб он сужался и был широким, прописываем эти 2 свойства */
         margin-right: 6px;
         padding: 15px;
         @extend %quicksand-500;
@@ -888,7 +890,7 @@
   }
 }
 
-/* ЭТО УЖЕ НОВАЯ СТРАНИЦА */
+/* ЭТО УЖЕ НОВАЯ СТРАНИЦА LOGIN */
 
 .top {
   &__container {
@@ -916,10 +918,92 @@
   &__link {
     color: #868686;
   }
-
-  
 }
 
+.modal {
+  max-width: 570px;
+  margin: 0 auto;
+  padding: 115px 0;
+
+  &__links {
+    display: flex;
+    justify-content: center;
+    column-gap: 50px;
+    margin-bottom: 40px;
+  }
+
+  &__link {
+    @extend %roboto-400;
+    font-size: 22px;
+
+    &--active {
+      color: $accent;
+    }
+  }
+
+  a,
+  label,
+  button,
+  input[type="checkbox"] {
+    cursor: pointer;
+  }
+
+  &__form,
+  &__label:nth-child(1),
+  &__label:nth-child(2) {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__label:nth-child(1),
+  &__label:nth-child(2) {
+    row-gap: 15px;
+  }
+
+  &__label:nth-child(1) input,
+  &__label:nth-child(2) input {
+    padding: 0 20px;
+  }
+
+  &__label:nth-child(1) {
+    margin-bottom: 38px;
+  }
+
+  &__label:nth-child(2) {
+    margin-bottom: 27px;
+  }
+
+  &__label:nth-of-type(3) {
+    margin-bottom: 20px;
+  }
+
+  button[type="submit"] {
+    background-color: #292929;
+    color: #fff;
+    @extend %roboto-400;
+    letter-spacing: 2px;
+  }
+
+  input:not(input[type="checkbox"]),
+  button {
+    height: 60px;
+    background-color: #f6f6f6;
+    border: none;
+  }
+
+  &__lostPassword {
+    margin-top: 20px;
+    color: $accent;
+  }
+
+  &__text {
+    margin-bottom: 38px;
+
+    p:first-child {
+      margin-bottom: 30px;
+    }
+  }
+}
 
 // Импорт медиа вконце как бы писали медиа запросы
 @import "media";
