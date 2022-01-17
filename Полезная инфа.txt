@@ -52,3 +52,7 @@ View on GitHub -> Внизу Package Managers ну и установка npm i -
 Таймер плагин взял с codeopen https://codepen.io/SitePoint/pen/NWxKgxN
 
 Если много страничный сайт, то естественно много html файлов, но у нас ведь gulp а именно browser sync подключен к одной странице, чтоб смотреть на другую html страницу, пишем http://localhost:3000/название-страницы.html
+
+https://dummyimage.com рыбные картинки
+
+сайт webref.ru посмотри
