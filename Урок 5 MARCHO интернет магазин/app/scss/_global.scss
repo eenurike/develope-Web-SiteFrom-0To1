@@ -53,6 +53,14 @@ p {
   text-align: center;
 }
 
+.form-title {
+  text-transform: uppercase;
+  margin-bottom: 25px;
+  @extend %roboto-400;
+  font-size: 22px;
+  color: #29282d;
+}
+
 .button {
   display: inline-block;
   padding: 0 22px;

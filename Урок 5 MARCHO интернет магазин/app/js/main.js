@@ -4,6 +4,11 @@ $(function(){
     $('.burger-menu__line').toggleClass('burger-menu__active');
   });
 
+  $('.filter-price__input').ionRangeSlider({
+    type: 'double',
+    prefix: "$"
+  });
+
   $('.top-slider__inner').slick({
     dots: true,
     arrows: false,
@@ -12,8 +17,6 @@ $(function(){
     autoplaySpeed: 2000
   });
 
-
- 
   $(".stars").rateYo({
     starWidth: "16px",
     // rating    : 4,

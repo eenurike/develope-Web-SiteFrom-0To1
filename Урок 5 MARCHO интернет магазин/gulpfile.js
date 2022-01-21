@@ -76,6 +76,8 @@ function scripts() {
     /* Подключили fancybox */
     'node_modules/rateyo/src/jquery.rateyo.js',
     /* Подключили звездный рейтинг */
+    'node_modules/ion-rangeslider/js/ion.rangeSlider.js',
+    /* Подключили фильтрацию цен */
     'app/js/main.js'
     /* Файлов js может быть много, так что записываем в квадратных скобках */
   ])

@@ -56,3 +56,5 @@ View on GitHub -> Внизу Package Managers ну и установка npm i -
 https://dummyimage.com рыбные картинки
 
 сайт webref.ru посмотри
+
+Плагин для фильтрации цен http://ionden.com/a/plugins/ion.rangeSlider/index.html, так же устанавливаем через npm i ion-rangeslider --save-dev, затем подключаешь в gulpfile
