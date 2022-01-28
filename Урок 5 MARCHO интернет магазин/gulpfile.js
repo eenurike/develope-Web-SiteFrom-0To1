@@ -78,6 +78,8 @@ function scripts() {
     /* Подключили звездный рейтинг */
     'node_modules/ion-rangeslider/js/ion.rangeSlider.js',
     /* Подключили фильтрацию цен */
+    'node_modules/jquery-form-styler/dist/jquery.formstyler.js',
+    /* Подключили плагин стилизаций форм */
     'app/js/main.js'
     /* Файлов js может быть много, так что записываем в квадратных скобках */
   ])

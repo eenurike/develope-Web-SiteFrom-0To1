@@ -1,0 +1,39 @@
+Стилизация checkbox, действуем по принципу спрячь и покажи чтото другое, так как чекбоксы не стилизуются, структура должна быть такая. И обязательно чтоб этот span который встает вместо input checkbox, должен находится ниже input checkbox, так как код идет сверху вниз, мы не можем задать верхнему коду свойства!!!
+
+<label class="box">
+  <input class="input" type="checkbox">
+  <span class="checkbox"></span>
+</label>
+
+<label class="box">
+  <input class="input" type="checkbox" checked>
+  /* Это чтоб всегда одна категория была выбрана */
+  <span class="checkbox"></span>
+</label>
+
+.input {
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  position: absolute;
+}
+
+.input:checked + .checkbox {
+  background-image: url('../images/icons/on-check.svg');
+  /* Тут мы пишем чтоб свойство checked передалось в наш span, и стилизуем его как хотим, в моем случае я скачал галочку и при клике на span будет показываться галочка */
+}
+
+И потом просто стилизуем span на месте checkbox
+
+.checkbox {
+  width: 16px;
+  height: 16px;
+  display: block;
+  /* Чтоб этот span появился, можно было position absolute, но мне так не нравится позиционировать элемент */
+  margin-top: 2px;
+}
+
+И смотри когда верстаешь блоки с филтрацией, когда выбираешь пункты, потом жмешь поиск, и сайт ищет по твоим категориям, то все элементы форм нужно писать в теге form,
+а выбор в каких либо категорях пишешь в label, label как бы обьединяет что в нем написанно, ну и при помощи манипуляции которая описанна сверху, можешь стилизовать выборку.
+И radiobutton стилизуются точно так же!!!

@@ -4,9 +4,39 @@ $(function(){
     $('.burger-menu__line').toggleClass('burger-menu__active');
   });
 
+  $('.shop__content-filter__btn').on('click', function() {
+    $('.shop__content-filter__btn').removeClass('shop__content-filter__btn--active');
+    $(this).addClass('shop__content-filter__btn--active');
+    /* this обозначает именно кликнутый элемент, типо сперва при клике удаляются класс active,
+    но добавляет active на кликнутый элемент */
+  });
+
+  $('.shop__content-filter__list').on('click', function() {
+    $('.shop__content-inner').addClass('change-grid');
+  });
+
+  $('.shop__content-filter__grid').on('click', function() {
+    $('.shop__content-inner').removeClass('change-grid');
+  });
+
+  // $('.select-styled').styler();
+  /* Ну в моем случае я не буду подключать этот плагин, стилизовал по возможности
+  дефолтные стили option, по стилю с макетом подходит */
+
   $('.filter-price__input').ionRangeSlider({
     type: 'double',
-    prefix: "$"
+    prefix: "$",
+    onStart: function (data) {
+      $('.filter-price__from').text('$' + data.from);
+      $('.filter-to').text('$' + data.to);
+      /* Чтоб цену сразу показывались при загрузке страницы */
+    },
+    onChange: function (data) {
+      /* добавили метод для отслеживания изменения в цене на ползунке
+      Этот метод нашел в документации */
+      $('.filter-price__from').text('$' + data.from);
+      $('.filter-to').text('$' + data.to);
+  },
   });
 
   $('.top-slider__inner').slick({

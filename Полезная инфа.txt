@@ -58,3 +58,5 @@ https://dummyimage.com рыбные картинки
 сайт webref.ru посмотри
 
 Плагин для фильтрации цен http://ionden.com/a/plugins/ion.rangeSlider/index.html, так же устанавливаем через npm i ion-rangeslider --save-dev, затем подключаешь в gulpfile
+
+Плагин для форм input[radio, checkbox и т.д] особенно select https://www.npmjs.com/package/jquery-form-styler

@@ -1,8 +1,10 @@
 /* libs это то где хранятся все библеотеки, это просто как если бы пожключали через link в html */
 
 @import "../../node_modules/slick-carousel/slick/slick.scss";
-/* Усли прописать просто css, то он просто закинет этот путь в виде строки */
+/* Если прописать просто css, то он просто закинет этот путь в виде строки */
 @import "../../node_modules/@fancyapps/ui/dist/fancybox";
 @import "../../node_modules/swiper/swiper-bundle.min";
 @import "../../node_modules/rateyo/src/jquery.rateyo";
 @import "../../node_modules/ion-rangeslider/css/ion.rangeSlider";
+@import "../../node_modules/jquery-form-styler/dist/jquery.formstyler";
+@import "../../node_modules/jquery-form-styler/dist/jquery.formstyler.theme";
