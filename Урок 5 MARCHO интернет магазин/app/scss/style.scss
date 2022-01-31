@@ -1388,6 +1388,11 @@
         display: none;
       }
 
+      &:hover .product-item__link-box {
+        bottom: 50%;
+        transform: translateY(50%);
+      }
+
       .product-item__link-box {
         width: unset;
         display: flex;
