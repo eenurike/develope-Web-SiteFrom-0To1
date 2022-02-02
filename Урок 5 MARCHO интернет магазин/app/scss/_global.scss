@@ -150,3 +150,47 @@ p {
   }
 }
 
+.shop-pagination {
+  display: flex;
+  justify-content: center;
+  column-gap: 43px;
+  padding-top: 35px;
+
+  .pagination__prev,
+  .pagination__next {
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      background-repeat: no-repeat;
+      bottom: calc(50% - 1px);
+      transform: translateY(50%);
+      width: 6px;
+      height: 10px;
+    }
+  }
+
+  .pagination__prev::before {
+    left: -15px;
+    background-image: url("../images/icons/shop-page/angle_left.svg");
+  }
+
+  .pagination__next::before {
+    background-image: url("../images/icons/shop-page/angle_right.svg");
+    right: -15px;
+  }
+
+  .pagination__list {
+    display: flex;
+    align-items: center;
+    column-gap: 31px;
+  }
+
+  .pagination__link--active {
+    color: $accent;
+  }
+}
+
+
+
