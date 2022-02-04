@@ -1494,5 +1494,177 @@
   }
 }
 
+.product {
+  padding: 120px 0 60px;
+  border-bottom: 1px solid #f0f0f0;
+
+  &-details__item {
+    display: flex;
+    justify-content: space-between;
+    column-gap: 70px;
+  }
+
+  &-inner__slide {
+    max-width: 730px;
+  }
+
+  &-inner__content {
+    max-width: 380px;
+  }
+
+  &-item__title {
+    text-align: left;
+  }
+
+  &-inner__statistics {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 37px;
+  }
+
+  .stars__container {
+    display: flex;
+    align-items: center;
+
+    > span {
+      @extend %roboto-500;
+      color: $title;
+      margin-left: 5px;
+    }
+  }
+
+  &-inner__subtitle {
+    @extend %roboto-400;
+    font-size: 18px;
+    color: black;
+    margin-bottom: 10px;
+  }
+
+  &-inner__box {
+    display: flex;
+    column-gap: 10px;
+  }
+
+  &-inner__form {
+    margin-top: 40px;
+  }
+
+  &-inner__input {
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    position: absolute;
+  }
+
+  &-inner__input:checked + .product-inner__radio {
+    border: 1px solid $accent;
+  }
+
+  &-inner__radio {
+    padding: 3px;
+    border: 1px solid #d6d6d8;
+    display: inline-block;
+    
+    > span {
+      height: 16px;
+      width: 16px;
+      display: block;
+    }
+
+    &--pink {
+      background-color: #f49ac1;
+    }
+
+    &--grey {
+      background-color: #e5e4e1;
+    }
+
+    &--yellow {
+      background-color: #ffbc41;
+    }
+
+    &--purple {
+      background-color: #b370ff;
+    }
+
+    &--green {
+      background-color: #6fdf9e;
+    }
+
+    &--red {
+      background-color: #ff6060;
+    }
+  }
+
+  &-color__checkbox {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid $default;
+  }
+
+  &-inner__input:checked + .product-color__checkbox {
+    border: 1px solid $accent;
+  }
+
+  &-inner__size {
+    margin: 37px 0;
+  }
+
+  &-inner__info {
+    
+    &-item{
+    display: flex;
+    margin-bottom: 11px;
+
+    &:last-child {
+      margin-bottom: 36px;
+    }
+    }
+
+    &-title {
+      width: 80px;
+      margin-right: 17px;
+    }
+
+    &-text {
+      display: flex;
+      align-items: center;
+      column-gap: 15px;
+    }
+
+    &-link {
+      svg path {
+        fill: $default;
+      }
+
+      &:hover svg path {
+        fill: $accent;
+      }
+    }
+  }
+
+  &-inner__amount {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &-inner__input {
+    width: 114px;
+  }
+
+  &-inner__btn {
+    padding: 17px 39px;
+    text-transform: capitalize;
+    letter-spacing: normal;
+    border-radius: 0;
+  }
+
+}
+
 // Импорт медиа пишем вконце как бы писали обычные   медиа запросы
 @import "media";
