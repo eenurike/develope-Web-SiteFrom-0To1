@@ -4,6 +4,43 @@ $(function(){
     $('.burger-menu__line').toggleClass('burger-menu__active');
   });
 
+  $('.product-tabs__tab').click('on', function(e) {
+    e.preventDefault();
+    /* Чтоб убрать стандартное поведение элементов, например ссылки */
+    $('.product-tabs__tab').removeClass('product-tabs__tab--active');
+    $(this).addClass('product-tabs__tab--active');
+    /* this это именно кликнутый элемент */
+    $('.product-tabs__content-item').removeClass('product-tabs__content-item--active');
+    $($(this).attr('href')).addClass('product-tabs__content-item--active');
+    /* Типа именно обращаемся к атрибуту (id) у контента, так как у нас в HTML по id связаны
+    блоки табов и контента */
+
+  });
+
+  $('.product-inner__aside').slick({
+    asNavFor: '.product-inner__main',
+    /* Смотри так как у нас слайдер имеет особую структуру, то что главная большая фотка большая,
+    а остальные с боку маленькие, поэтому и пишем два слайдера, как бы соединили два
+    слайдера воедино */
+    focusOnSelect: true,
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    vertical: true,
+    /* Ну чтоб слйдер был вертикальным, а не горизонтальным */
+    draggable: false
+    /* Чтоб вообще он не двигался */
+
+  });
+  $('.product-inner__main').slick({
+    asNavFor: '.product-inner__aside',
+    draggable: false,
+    arrows: false
+  });
+
+  $('.product-inner__number').styler({
+
+  });
+
   $('.shop__content-filter__btn').on('click', function() {
     $('.shop__content-filter__btn').removeClass('shop__content-filter__btn--active');
     $(this).addClass('shop__content-filter__btn--active');

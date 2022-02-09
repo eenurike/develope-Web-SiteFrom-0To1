@@ -1520,7 +1520,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 37px;
+    margin-bottom: 30px;
   }
 
   .stars__container {
@@ -1547,7 +1547,7 @@
   }
 
   &-inner__form {
-    margin-top: 40px;
+    margin-top: 32px;
   }
 
   &-inner__input {
@@ -1612,7 +1612,7 @@
   }
 
   &-inner__size {
-    margin: 37px 0;
+    margin: 29px 0;
   }
 
   &-inner__info {
@@ -1650,8 +1650,67 @@
 
   &-inner__amount {
     display: flex;
-    justify-content: space-between;
+    column-gap: 15px;
   }
+
+  .jq-number.product-inner__number {
+    position: relative;
+  }
+
+  .jq-number__field {
+    height: 100%;
+    position: relative;
+  }
+
+  .jq-number__field input {
+    width: 112px;
+    text-align: center;
+    height: 100%;
+    color: $title;
+    @extend %quicksand-500;
+    font-size: 16px;
+    border: 1px solid #f0f0f0;
+  }
+
+  .jq-number__spin {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 12px;
+    height: 12px;
+    cursor: pointer;
+
+  }
+
+  .jq-number__spin.plus {
+    right: 14px;
+  }
+
+  .jq-number__spin.minus {
+    left: 14px;
+  }
+
+  .jq-number__spin.minus::after,
+  .jq-number__spin.plus::after {
+    content: "";
+    position: absolute;
+    width: 12px;
+    height: 2px;
+    background-color: $title;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .jq-number__spin.plus::before {
+    content: "";
+    position: absolute;
+    width: 2px;
+    height: 12px;
+    background-color: $title;
+    right: 50%;
+    transform: translateX(50%);
+  }
+
 
   &-inner__input {
     width: 114px;
@@ -1664,6 +1723,107 @@
     border-radius: 0;
   }
 
+
+  &-inner__slide {
+    display: flex;
+    /* Дисплей флекс сработал со слик слайдером потомучто у второго блока 
+    ограниченная ширина */
+    // min-width: 0;
+    justify-content: center;
+  }
+
+  .product-inner__aside-item {
+    display: block !important;
+  }
+
+  &-inner__aside {
+    width: 140px;
+    margin-right: 30px;
+    cursor: pointer;
+
+    &-item {
+      margin-bottom: 28px;
+      width: 140px;
+      height: 140px;
+
+      & img {
+        width: 140px;
+        height: 140px;
+        object-fit: cover;
+        /* Чтоб сама фотка была нужного размера */
+        object-position: top;
+      }
+    }
+  }
+
+  &-inner__main {
+    width: 560px;
+
+    & img {
+      width: 560px;
+      // height: 650px;
+      object-fit: cover;
+      /* Тоже самое для картинки задаем определенный размер */
+    }
+  }
+
+  .slick-slide:last-child div .product-inner__aside-item{
+    display: block !important;
+    margin-bottom: 0 !important;
+  }
+
+  .slick-list {
+    height: auto;
+  }
+
+  .product-inner__aside .slick-list {
+    height: auto !important;
+
+    & .slick-track {
+      height: inherit !important;
+    }
+  }
+}
+
+.product-tabs {
+  padding-top: 100px;
+
+  &__top {
+    border-bottom: 1px solid #f0f0f0;
+    padding-bottom: 12px;
+    margin-bottom: 40px;
+  }
+
+  &__tab {
+    @extend %roboto-400;
+    font-size: 22px;
+    margin-right: 55px;
+    padding-bottom: 12px;
+    transition: .3s;
+
+    &--active {
+      color: $title;
+      border-bottom: 1px solid $accent;
+    }
+
+    &:hover {
+      color: $title;
+      border-bottom: 1px solid $accent;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &__content-item {
+    display: none;
+    /* Короче схема такая, если у таба и item есть класс active то он его показывает
+    а другие скрывает */
+    &--active{
+      display: block;
+    }
+  }
 }
 
 // Импорт медиа пишем вконце как бы писали обычные   медиа запросы

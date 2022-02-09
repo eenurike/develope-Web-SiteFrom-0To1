@@ -97,6 +97,7 @@
       <div class="container">
         <div class="product-details__item">
           <div class="product-inner__slide">
+            <!-- Смотри слик и флексы конфликтуют, нужно обернуть в обертку чтоб нормально работало -->
             <div class="product-inner__aside">
               <div class="product-inner__aside-item">
                 <img class="product-inner__aside-img" src="images/product/product-details/1.jpg" alt="">
@@ -116,7 +117,17 @@
                 <img class="product-inner__aside-img" src="images/product/product-details/1.jpg" alt="">
               </div>
             </div>
+            
             <div class="product-inner__main">
+              <div class="product-inner__main-item">
+                <img class="product-inner__main-img" src="images/product/product-details/1.jpg" alt="">
+              </div>
+              <div class="product-inner__main-item">
+                <img class="product-inner__main-img" src="images/product/product-details/1.jpg" alt="">
+              </div>
+              <div class="product-inner__main-item">
+                <img class="product-inner__main-img" src="images/product/product-details/1.jpg" alt="">
+              </div>
               <div class="product-inner__main-item">
                 <img class="product-inner__main-img" src="images/product/product-details/1.jpg" alt="">
               </div>
@@ -277,18 +288,43 @@
               </ul>
 
               <div class="product-inner__amount">
-                <input class="product-inner__number" type="number">
+                <input class="product-inner__number" type="number" value="1" min="1">
+                <!-- Меньше 1 число не будет спускаться -->
                 <button class="product-inner__btn button" type="submit">add to card</button>
               </div>
             </form>
           </div>
         </div>
+
+
         <div class="product-tabs">
+          <div class="product-tabs__top">
+            <a class="product-tabs__tab product-tabs__tab--active" href="#tab-1">
+              Description
+            </a>
+            <a class="product-tabs__tab" href="#tab-2">
+              Additional information
+            </a>
+            <a class="product-tabs__tab" href="#tab-3">
+              Reviews
+            </a>
+          </div>
 
-        </div>
-        <div class="product-reviews">
+          <!-- Соединяем наши табы с помощь id -->
 
+          <div class="product-tabs__content">
+            <div class="product-tabs__content-item product-tabs__content-item--active" id="tab-1">
+            content 1
+            </div>
+            <div class="product-tabs__content-item" id="tab-2">
+            content 2
+            </div>
+            <div class="product-tabs__content-item" id="tab-3">
+            content 3
+            </div>
+          </div>
         </div>
+
       </div>
     </section>
   </main>

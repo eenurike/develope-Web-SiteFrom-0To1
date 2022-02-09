@@ -58,3 +58,57 @@ bla:hover {
   bottom: 50%;
   transform: translateY(50%)'
 }
+
+Если нужен слайдер который будет показывать одну большую фотографию а с боку маленькие, и при клике на маленькие фотографии в большом окне будет отображаться та кликнутая фотография, используя слик слайдер
+
+$('.product-inner__main').slick({
+    asNavFor: '.product-inner__aside',
+    /* Соединяем слайдеры */
+    focusOnSelect: true,
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    vertical: true,
+    /* Ну чтоб слйдер был вертикальным, а не горизонтальным */
+    draggable: false
+    /* Чтоб вообще он не двигался */
+
+  });
+  $('.product-inner__aside').slick({
+    asNavFor: '.product-inner__main',
+    /* Соединяем слайдеры */
+    draggable: false
+  });
+
+  структура HTML 
+
+<div class="product-inner__aside">
+  <div class="product-inner__aside-item">
+    <img class="product-inner__aside-img" src="images/product/product-details/1.jpg" alt="">
+  </div>
+  <div class="product-inner__aside-item">
+    <img class="product-inner__aside-img" src="images/product/product-details/1.jpg" alt="">
+  </div>
+  <div class="product-inner__aside-item">
+    <img class="product-inner__aside-img" src="images/product/product-details/1.jpg" alt="">
+  </div>
+  <div class="product-inner__aside-item">
+    <img class="product-inner__aside-img" src="images/product/product-details/1.jpg" alt="">
+  </div>
+</div>
+
+<div class="product-inner__main">
+  <div class="product-inner__main-item">
+    <img class="product-inner__main-img" src="images/product/product-details/1.jpg" alt="">
+  </div>
+  <div class="product-inner__main-item">
+    <img class="product-inner__main-img" src="images/product/product-details/1.jpg" alt="">
+  </div>
+  <div class="product-inner__main-item">
+    <img class="product-inner__main-img" src="images/product/product-details/1.jpg" alt="">
+  </div>
+  <div class="product-inner__main-item">
+    <img class="product-inner__main-img" src="images/product/product-details/1.jpg" alt="">
+  </div>
+</div>
+
+То есть структура второго слайдера должна быть такой же как и в первом
