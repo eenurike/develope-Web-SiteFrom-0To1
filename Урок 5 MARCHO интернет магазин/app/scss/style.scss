@@ -1824,6 +1824,68 @@
       display: block;
     }
   }
+
+  .comments {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 37px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &__img {
+      width: 71px;
+      height: 71px;
+    }
+
+    &__content {
+      margin-left: 28px;
+
+      &-top {
+        display: flex;
+        align-items: center;
+        margin-bottom: 14px;
+      }
+
+      &-name {
+        @extend %roboto-400;
+        color: $title;
+        padding-right: 13px;
+        position: relative;
+        
+        &::before {
+          content: "";
+          position: absolute;
+          right: 0;
+          top: 50%;
+          transform: translateY(-50%);
+          width: 1px;
+          height: 14px;
+          background-color: #8d8d8d;
+        }
+      }
+
+      &-date {
+        padding-left: 10px;
+      }
+
+      &-stars {
+        margin-left: auto;
+      }
+
+      &-text {
+        margin-bottom: 10px;
+      }
+
+      &-reply {
+        padding-left: 24px;
+        background-image: url(../images/icons/reply.svg);
+        background-repeat: no-repeat;
+        background-position: center left;
+      }
+    }
+  }
 }
 
 // Импорт медиа пишем вконце как бы писали обычные   медиа запросы
