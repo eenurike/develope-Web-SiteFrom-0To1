@@ -19,6 +19,18 @@
   position: absolute;
 }
 
+/* 
+ИЛИ стилизуешь прям в самом теге span, например вставляешь картинки svg которые меняют цвет при клике 
+<label class="box">
+  <input class="input" type="checkbox" checked>
+  /* Это чтоб всегда одна категория была выбрана */
+  <span class="checkbox">
+    <svg>Bla</svg>
+  </span>
+</label>
+*/
+
+
 .input:checked + .checkbox {
   background-image: url('../images/icons/on-check.svg');
   /* Тут мы пишем чтоб свойство checked передалось в наш span, и стилизуем его как хотим, в моем случае я скачал галочку и при клике на span будет показываться галочка */
