@@ -2018,5 +2018,226 @@
   }
 }
 
+
+.blog-page {
+  padding: 120px 0;
+   
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    column-gap: 30px;
+  }
+
+  &__content {
+    max-width: 770px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 60px;
+  }
+
+  &__aside {
+    display: flex;
+    flex-direction: column;
+    row-gap: 40px;
+    max-width: 370px;
+
+    .filter__item {
+      padding: 35px 25px;
+    }
+
+    .person {
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      row-gap: 30px;
+
+      &__img {
+        width: 160px;
+        height: 160px;
+        object-fit: cover;
+      }
+
+      &__name {
+        @extend %roboto-700;
+        color: $title;
+        font-size: 18px;
+      }
+
+      &__job {
+        color: $accent;
+      }
+
+      .footer-top__social {
+        margin-top: 0;
+      }
+    }
+
+    .posts {
+      &__card {
+        display: flex;
+        column-gap: 19px;
+        border-bottom: 1px solid #ececec;
+        padding-bottom: 20px;
+        margin-bottom: 20px;
+
+        &:last-of-type {
+          border: none;
+          padding-bottom: 0;
+          margin-bottom: 0;
+        }
+
+        &-image {
+          width: 80px;
+          height: 80px;
+          background-color: orange;
+          flex-shrink: 0;
+        }
+
+        &-content {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+        }
+
+        &:not(.posts__card-date) {
+          @extend %roboto-400;
+          color: $title;
+          font-size: 18px;
+        }
+
+        &-text {
+          color: $title;
+        }
+
+        &-date {
+          display: flex;
+          column-gap: 9px;
+
+          > p {
+            font-size: 16px;
+          }
+        }
+      }
+
+      
+      
+    }
+  }
+
+  &__item {
+    max-width: 770px;
+    transition: .3s;
+
+    &:hover {
+      box-shadow: 0px 20px 60px 0px rgba(202, 202, 202, 0.35);
+    }
+    
+    &--no-image {
+      .blog-page__item-box {
+        border-top: 1px solid #ececec;
+      }
+    }
+
+    &--slider {
+      position: relative;
+
+      .slick-arrow {
+        border: none;
+        width: 40px;
+        height: 40px;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 0;
+        background-color: $accent;
+        box-shadow: 0px 7px 20px 0px rgba(168, 168, 168, 0.3);
+        border-radius: 50%;
+        z-index: 1;
+        cursor: pointer;
+
+        &.slick-next {
+          right: 40px;
+        }
+
+        &.slick-prev {
+          left: 40px;
+        }
+
+        &.slick-disabled {
+          background-color: #fff;
+        }
+      }
+
+      .blog-page__item-image {
+        /* Короче если наши кастомные батоны подключены через js, то можно стили их
+        меня как не странно в CSS!!! */
+        path {
+          fill: white;
+        }
+
+        & .slick-disabled {
+          path {
+            fill: $accent;
+          }
+        }
+      }
+    }
+
+    .blog__content-title {
+      @extend %roboto-500;
+
+      &:hover .blog-page__item-link {
+        color: $accent;
+      }
+    }
+    
+
+    &-link {
+      display: block;
+      color: inherit;
+      transition: .3s;
+      /* Задаем ссылке блочную структуру, ну и для цвета что брался от родителя,
+      это нужно для заглавия  */
+    }
+
+    &-img {
+      max-width: 770px;
+      height: 450px;
+      object-fit: cover;
+      display: block;
+      /* На то случай если кто то захочет влупашить огромную картинку */
+    }
+
+    &-image {
+      position: relative;
+      display: flex;
+      justify-content: center;
+
+      .video-fashion__img {
+        position: absolute;
+        top: 40%;
+      }
+    }
+
+    &-box {
+      padding: 49px 40px;
+      border: 1px solid #ececec;
+      border-top: none;
+      .blog__content-title {
+        min-width: 100%;
+        margin-bottom: 28px;
+      }
+
+      .blog__content-info {
+        max-width: 100%;
+        justify-content: flex-start;
+        column-gap: 30px;
+      }
+    }
+  }
+}
+
 // Импорт медиа пишем вконце как бы писали обычные   медиа запросы
 @import "media";
