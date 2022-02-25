@@ -1824,8 +1824,9 @@
       display: block;
     }
   }
+}
 
-  .comments {
+.comments {
     display: flex;
     align-items: flex-start;
     margin-bottom: 37px;
@@ -1886,7 +1887,6 @@
       }
     }
   }
-}
 
 .product__form {
   padding-top: 60px;
@@ -2235,6 +2235,155 @@
         justify-content: flex-start;
         column-gap: 30px;
       }
+    }
+  }
+}
+
+.blog-one {
+  &__content-box {
+
+    h3 {
+      margin: 25px 0;
+      /* Задаем у всех именно margin верх и них, так чтобы они всхлопывались. И засччет
+      этого мы обезопасим себя чтоб у всех элементов были отступы, мы ведь незнаем
+      сколько и где какие теги будут */
+      @extend %roboto-500;
+      color: $title;
+      font-size: 22px;
+    }
+  
+    p {
+      margin: 26px 0;
+    }
+
+    blockquote {
+      margin: 33px 0;
+      @extend %roboto-400;
+      color: $title;
+      font-size: 22px;
+      border-left: 3px solid $accent;
+      padding: 39px 36px;
+      background-color: #f6f6f6;
+    }
+
+    .blog-one__img-left {
+      float: left;
+      margin-right: 29px;
+    }
+  
+    /* Взависимости от того с какой стороны будет картинка слева или справа.
+      И насчет float, флоат именно предназначен чтоб текст обтикал картинку!! */
+    
+      .blog-one__img-right {
+        float: right;
+        margin-left: 29px;
+      }
+  }
+
+  &__title {
+    @extend %roboto-700;
+    color: $title;
+    font-size: 26px;
+    padding: 38px 0 28px;
+    border-top: 1px solid #ececec;
+  }
+
+  &__content {
+    display: block;
+    
+    &-box {
+      padding: 30px;
+      border: 1px solid #ececec;
+      border-top: none;
+    }
+
+    .comments__content-top {
+      margin-bottom: 0;
+    }
+  }
+
+  &__info {
+    display: flex;
+    column-gap: 27px;
+    margin: 29px 0;
+
+    &-item {
+      display: flex;
+      align-items: center;
+      column-gap: 8px;
+    }
+
+    &-img {
+      width: 16px;
+      height: 16px;
+    }
+  }
+
+  .product__form {
+    padding-top: 0;
+  }
+
+  &__comments {
+    padding-bottom: 37px;
+  }
+
+  &__author {
+    padding: 38px 0 41px;
+
+    &-box {
+      display: flex;
+      justify-content: space-between;
+      padding: 0 27px;
+    }
+
+    &-tags,
+    &-share {
+      span {
+        margin-right: 6px;
+        color: #29282d;
+      }
+    }
+    
+    &-share {
+      display: flex;
+      align-items: center;
+    }
+
+    .footer-top__social {
+      margin-top: 0;
+      column-gap: 10px;
+      align-items: center;
+
+      &-link {
+        display: flex;
+        align-items: center;
+      }
+    }
+
+    &-content {
+      display: flex;
+      margin-top: 40px;
+    }
+
+
+    &-img {
+      min-width: 140px;
+      height: 140px;
+      object-fit: cover;
+    }
+
+    &-avatar__info {
+      margin-left: 28px;
+      padding: 11px 0 14px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    &-name {
+      @extend %roboto-500;
+      font-size: 22px;
+      color: #29282d;
     }
   }
 }
