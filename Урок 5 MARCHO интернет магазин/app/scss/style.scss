@@ -2388,5 +2388,41 @@
   }
 }
 
+#map {
+  width: 100%;
+  height: 450px;
+  margin: 120px 0;
+}
+
+.contact-page {
+  iframe {
+    width: 100% !important;
+    height: 450px !important;
+    margin: 120px 0;
+  }
+
+  &__items {
+    li {
+      display: flex;
+      align-items: center;
+
+      span, a {
+        display: block;
+      }
+    }
+  } 
+  &__image {
+    width: 60px;
+    height: 60px;
+    box-shadow: 0px 5px 20px 0px rgba(146, 146, 146, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  
+  
+}
+
 // Импорт медиа пишем вконце как бы писали обычные   медиа запросы
 @import "media";
