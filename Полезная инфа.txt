@@ -61,3 +61,5 @@ https://dummyimage.com рыбные картинки
 
 Плагин для форм input[radio, checkbox и т.д] особенно select https://www.npmjs.com/package/jquery-form-styler
 
+Про модульность и подкалючение карт смотри курс "Создание сайтов от 0 до 1" 20.2 и 21.1
+

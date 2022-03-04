@@ -32,7 +32,10 @@ body {
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  // padding: 0 15px; 
+}
+
+.container:not(.top-slider .container) {
+  padding: 0 10px;
 }
 
 // .logo__img {
