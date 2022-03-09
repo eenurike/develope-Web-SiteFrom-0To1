@@ -1,5 +1,8 @@
 @media (max-width: 1400px) {
   .top-slider {
+    &__item {
+      justify-content: space-between;
+    }
     .container {
       padding-left: 40px;
     }
@@ -46,15 +49,10 @@
       }
     }
   }
-  
 }
 
 @media (max-width: 1200px) {
   .top-slider {
-    &__item {
-      justify-content: space-between;
-    }
-
     &__content {
       padding-top: 0;
     }
@@ -64,8 +62,21 @@
       object-fit: contain;
       /* Всегда картинкам прописывай object fit чтоб они растягивались при уменьшении экрана как надо */
     }
+  }
 
-    
+  .categories {
+    &__item {
+      background-repeat: no-repeat;
+      background-position: right bottom;
+      background-size: contain;
+    }
+  }
+
+  .categories-info {
+    background: url(../images/categories/decorate-bg/bg-left.svg) left 97%, 
+                url(../images/categories/decorate-bg/bg-right.svg) right 97%;
+    background-repeat: no-repeat;
+    background-size: 30%;
   }
 }
 
@@ -98,6 +109,45 @@
       &__item {
         max-width: 300px;
         padding: 30px 20px;
+      }
+    }
+  }
+
+  .categories-info {
+    .categories__inner {
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: repeat(3, 1fr);
+      grid-template-areas: 
+       "two two"
+       "one three"
+       "one four"
+      ;
+    }
+
+    .categories__item {
+      background-repeat: no-repeat;
+      background-position: right bottom;
+      background-size: contain;
+
+      &:nth-child(1) {
+        grid-row: span 1;
+        grid-area: one;
+      }
+
+      &:nth-child(2) {
+        grid-column: span 1;
+        display: block;
+        background-position: right bottom;
+        background-size: 480px;
+        grid-area: two;
+      }
+
+      &:nth-child(3) {
+        grid-area: three;
+      }
+
+      &:nth-child(4) {
+        grid-area: four;
       }
     }
   }
@@ -267,6 +317,13 @@
       transform: translateX(45%);
     }
   }
+
+  .categories-info {
+    background: url(../images/categories/decorate-bg/bg-left.svg) left 97%, 
+                url(../images/categories/decorate-bg/bg-right.svg) right 97%;
+    background-repeat: no-repeat;
+    background-size: 35%;
+  }
 }
 
 
@@ -308,6 +365,33 @@
       margin-bottom: 50px;
     }
   }
+
+  .categories-info {
+    .categories__inner {
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(4, 1fr);
+      grid-template-areas: 
+       "  one one"
+       "  two two"
+       "three three"
+       " four four"
+      ;
+    }
+
+    .categories__item {
+      &:nth-child(2) {
+        background-position: right bottom;
+        background-size: 400px;
+      }
+    }
+  }
+
+  .categories-info {
+    background: url(../images/categories/decorate-bg/bg-left.svg) left 97%, 
+                url(../images/categories/decorate-bg/bg-right.svg) right 97%;
+    background-repeat: no-repeat;
+    background-size: 50%;
+  }
 }
 
 @media (max-width: 600px) {
@@ -325,6 +409,13 @@
 
       }
     }
+  }
+
+  .categories-info {
+    background: url(../images/categories/decorate-bg/bg-left.svg) left 97%, 
+                url(../images/categories/decorate-bg/bg-right.svg) right 97%;
+    background-repeat: no-repeat;
+    background-size: 55%;
   }
 }
 
@@ -346,6 +437,13 @@
     .menu {
       order: unset;
     }
+  }
+
+  .categories-info {
+    background: url(../images/categories/decorate-bg/bg-left.svg) left 80%, 
+                url(../images/categories/decorate-bg/bg-right.svg) right 80%;
+    background-repeat: no-repeat;
+    background-size: 60%;
   }
 }
 
@@ -373,6 +471,33 @@
     &__links {
       width: unset;
     }
+  }
+
+  .categories__item {
+    // text-align: center;
+
+    &:nth-child(1) {
+      background-image: none !important;
+    }
+
+    &:nth-child(2) {
+      background-image: none !important;
+    }
+
+    &:nth-child(3) {
+      background-image: none !important;
+    }
+
+    &:nth-child(4) {
+      background-image: none !important;
+    }
+  }
+
+  .categories-info {
+    background: url(../images/categories/decorate-bg/bg-left.svg) left 72%, 
+                url(../images/categories/decorate-bg/bg-right.svg) right 72%;
+    background-repeat: no-repeat;
+    background-size: 58%;
   }
 }
 
