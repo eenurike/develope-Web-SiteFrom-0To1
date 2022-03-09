@@ -266,10 +266,6 @@
   }
 
   &__content {
-    // display: flex;
-    // flex-direction: column;
-    // justify-content: center;
-    // align-items: flex-start;
     padding-top: 125px;
     padding-left: 20px;
   }
@@ -278,7 +274,11 @@
     @extend %roboto-700;
     font-size: 58px;
     margin-bottom: 35px;
-    width: 660px;
+    max-width: 660px;
+  }
+
+  .common-title {
+    text-align: left;
   }
 
   &__text {

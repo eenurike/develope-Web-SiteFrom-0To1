@@ -1,10 +1,13 @@
 $(function(){
-  $('.burger-menu').click('on', function(){
-    $('.menu').toggleClass('menu-active');
-    $('.burger-menu__line').toggleClass('burger-menu__active');
+  $('.menu__btn').click('on', function(){
+    $('.menu__list').toggleClass('menu__list--active');
   });
 
-  
+  $('.footer-top__title').click('on', function() {
+    $(this).next().slideToggle();
+    // Именно скрывает кликнутый элемент, next() это обращение к вледующему элементу после footer-top__title
+    $(this).toggleClass('active');
+  });
 
   $('.blog-page__item--slider .blog-page__item-image').slick({
     prevArrow: `<button type="button" class="slick-prev"><svg xmlns="http://www.w3.org/2000/svg" width="7px" height="14px" viewBox="0 0 7 14" version="1.1"><g><path  d="M 5.25 12.25 C 5.027344 12.25 4.800781 12.164062 4.632812 11.992188 L 0.257812 7.617188 C -0.0859375 7.277344 -0.0859375 6.722656 0.257812 6.382812 L 4.632812 2.007812 C 4.972656 1.664062 5.527344 1.664062 5.867188 2.007812 C 6.210938 2.347656 6.210938 2.902344 5.867188 3.242188 L 2.113281 7 L 5.871094 10.757812 C 6.210938 11.097656 6.210938 11.652344 5.871094 11.996094 C 5.699219 12.164062 5.472656 12.25 5.25 12.25 Z M 5.25 12.25 "/></g></svg></button>`,
@@ -37,9 +40,8 @@ $(function(){
     slidesToScroll: 1,
     vertical: true,
     /* Ну чтоб слйдер был вертикальным, а не горизонтальным */
-    draggable: false
+    draggable: false,
     /* Чтоб вообще он не двигался */
-
   });
   $('.product-inner__main').slick({
     asNavFor: '.product-inner__aside',
@@ -91,7 +93,9 @@ $(function(){
     arrows: false,
     fade: false,
     autoplay: false,
-    autoplaySpeed: 2000
+    autoplaySpeed: 2000,
+    adaptiveHeight: true
+    /* Если картинки разных высот, чтоб слайды подстраивались под высоту картинки */
   });
 
   $(".stars").rateYo({
