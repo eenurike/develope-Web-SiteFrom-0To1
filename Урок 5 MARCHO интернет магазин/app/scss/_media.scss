@@ -17,11 +17,6 @@
     padding-right: 10px;
   }
 
-  // .categories-info .info::before,
-  // .categories-info .info::after {
-  //   display: none;
-  // }
-
   .blog__inner::before {
     display: none;
   }
@@ -47,6 +42,24 @@
         transform: translateY(50%);
         right: 25px;
       }
+    }
+  }
+
+  .video-fashion {
+    &__inner {
+      display: block;
+    }
+
+    &__video {
+      background-repeat: no-repeat;
+      background-position: center top;
+      background-size: cover;
+      max-width: 100%;
+      min-height: 480px;
+    }
+
+    &__content {
+      max-width: 100%;
     }
   }
 }
@@ -392,6 +405,14 @@
     background-repeat: no-repeat;
     background-size: 50%;
   }
+
+  .video-fashion {
+    padding: 60px 0;
+  }
+
+  .video-fashion__video {
+    min-height: 360px;
+  }
 }
 
 @media (max-width: 600px) {
@@ -416,6 +437,11 @@
                 url(../images/categories/decorate-bg/bg-right.svg) right 97%;
     background-repeat: no-repeat;
     background-size: 55%;
+  }
+  
+  .button {
+    padding: 10px 25px;
+    font-size: 15px;
   }
 }
 
@@ -444,6 +470,10 @@
                 url(../images/categories/decorate-bg/bg-right.svg) right 80%;
     background-repeat: no-repeat;
     background-size: 60%;
+  }
+
+  .video-fashion__video {
+    min-height: 270px;
   }
 }
 
@@ -498,6 +528,10 @@
                 url(../images/categories/decorate-bg/bg-right.svg) right 72%;
     background-repeat: no-repeat;
     background-size: 58%;
+  }
+
+  .video-fashion__video {
+    min-height: 250px;
   }
 }
 
