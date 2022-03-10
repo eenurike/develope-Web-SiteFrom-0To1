@@ -17,10 +17,6 @@
     padding-right: 10px;
   }
 
-  .blog__inner::before {
-    display: none;
-  }
-
   .categories-info {
     .info {
       column-gap: 15px;
@@ -91,6 +87,27 @@
     background-repeat: no-repeat;
     background-size: 30%;
   }
+
+  .blog {
+    background-position: center 620px;
+  }
+
+  .blog__inner {
+    column-gap: 20px;
+    &::before {
+      right: 0 ;
+    }
+
+    .blog__content {
+      padding-left: 10px;
+      padding-right: 10px;
+      &-info {
+        flex-wrap: wrap;
+        gap: 5px 5px;
+      }
+    }
+  }
+    
 }
 
 @media (max-width: 1050px) {
@@ -161,6 +178,54 @@
 
       &:nth-child(4) {
         grid-area: four;
+      }
+    }
+  }
+
+  .product-item__image {
+    height: auto;
+    margin-bottom: 15px;
+  }
+
+  .product-item .stars {
+    margin-bottom: 12px;
+  }
+
+  .product-item__title {
+    margin-bottom: 15px;
+    text-align: center;
+  }
+
+  .sale::after {
+    padding: 5px 7px;
+    top: 15px;
+    left: 15px;
+    font-size: 15px;
+  }
+
+  .promo #clockdiv {
+    column-gap: 20px;
+
+    > div {
+      height: 100px;
+      width: 100px;
+    }
+
+    span {
+      font-size: 35px;
+    }
+  }
+
+  .promo {
+    background-position: 10% top;
+
+    &__inner {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+
+      .common-link {
+        margin-right: 40px;
       }
     }
   }
@@ -337,6 +402,15 @@
     background-repeat: no-repeat;
     background-size: 35%;
   }
+
+  .product__inner {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px 30px;
+  }
+
+  .blog__content-title {
+    font-size: 20px;
+  }
 }
 
 
@@ -413,6 +487,22 @@
   .video-fashion__video {
     min-height: 360px;
   }
+
+  .promo {
+    background-position: 20% top;
+  }
+
+  .blog {
+    padding-bottom: 60px;
+    background-position: bottom -150px left 0;
+    background-size: 1000px;
+  }
+
+  .blog__inner {
+    flex-direction: column;
+    align-items: center;
+    row-gap: 20px;
+  }
 }
 
 @media (max-width: 600px) {
@@ -442,6 +532,63 @@
   .button {
     padding: 10px 25px;
     font-size: 15px;
+  }
+
+  .product {
+    padding: 60px 0;
+  }
+
+  .product__inner {
+    grid-template-columns: 1fr;
+  }
+
+  .promo {
+    background-position: 31% top;
+  }
+
+  .promo #clockdiv {
+    margin-bottom: 25px;
+    width: 100%;
+    justify-content: flex-end;
+  }
+
+  .partners {
+    padding: 60px 0;
+
+    &__inner {
+      display: grid;
+      justify-content: center;
+      grid-gap: 30px;
+      grid-template-areas: 
+        " one  two three"
+        "four five six"
+      ;
+    }
+
+    &__items {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    &__items:nth-child(1) {
+      grid-area: one;
+    }
+    &__items:nth-child(2) {
+      grid-area: two;
+    }
+    &__items:nth-child(3) {
+      grid-area: three;
+    }
+    &__items:nth-child(4) {
+      grid-area: four;
+    }
+    &__items:nth-child(5) {
+      grid-area: five;
+    }
+    &__items:nth-child(6) {
+      grid-area: six;
+    }
   }
 }
 
@@ -474,6 +621,22 @@
 
   .video-fashion__video {
     min-height: 270px;
+  }
+
+  .promo #clockdiv {
+    > div {
+      width: 80px;
+      height: 80px;
+    }
+
+    span {
+      font-size: 30px;
+      line-height: 30px;
+    }
+
+    .smalltext {
+      font-size: 14px;
+    }
   }
 }
 
@@ -532,6 +695,44 @@
 
   .video-fashion__video {
     min-height: 250px;
+  }
+
+  .promo__inner {
+    align-items: center;
+
+    .common-link {
+      margin-right: 0;
+    }
+  }
+
+  .promo {
+    background-color: #f6f6f6;
+    background-image: url("../images/video/bg.svg");
+    background-size: 1500px;
+  }
+
+  .promo #clockdiv {
+    column-gap: 5px;
+    justify-content: space-evenly;
+
+    > div {
+      width: 65px;
+      height: 65px;
+      box-shadow: 0px 10px 40px 0px rgb(187 187 187 / 74%);
+    }
+
+    span {
+      font-size: 25px;
+      line-height: 22px;
+    }
+
+    .smalltext {
+      font-size: 13px;
+    }
+  }
+
+  .promo__inner .common-link {
+    background-color: #f6f6f6;
   }
 }
 

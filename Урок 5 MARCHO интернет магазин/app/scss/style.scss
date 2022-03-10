@@ -570,7 +570,7 @@
 
   &__content {
     max-width: 570px;
-    padding: 67px 0;
+    padding-top: 67px;
     text-align: left;
 
     &-subtitle {
@@ -790,8 +790,12 @@
 
   &__inner {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
-    // column-gap: 150px;
+    gap: 20px 20px;
+    > a {
+      display: none;
+    }
   }
 }
 
@@ -838,6 +842,7 @@
     border: 1px solid #eaeaea;
     transition: .3s;
     z-index: 2;
+    background-color: #fcfcfc;
 
     &:hover {
       box-shadow: 0px 0px 60px 20px rgba(202, 202, 202, 0.35);
