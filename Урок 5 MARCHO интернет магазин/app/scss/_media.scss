@@ -7,6 +7,15 @@
       padding-left: 40px;
     }
   }
+
+  .top__container {
+    // min-height: 27.35vw;
+    min-height: 28vw;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }
 
 @media (max-width: 1300px) {
@@ -503,6 +512,22 @@
     align-items: center;
     row-gap: 20px;
   }
+
+  .top__container {
+    min-height: 200px;
+    background-color: #ececec;
+    background-color: #f6f6f6;
+    background-image: url("../images/video/bg.svg");
+
+  }
+
+  .modal {
+    padding-top: 60px;
+  }
+
+  .top-title {
+    font-size: 35px;
+  }
 }
 
 @media (max-width: 600px) {
@@ -558,11 +583,15 @@
     &__inner {
       display: grid;
       justify-content: center;
-      grid-gap: 30px;
+      row-gap: 30px;
+      column-gap: 40px;
       grid-template-areas: 
         " one  two three"
         "four five six"
       ;
+
+      /* Тут можно было partners__items задать отступы с лева и с права, чтоб 
+      правильно позиционировать, но более практичный вариант использовать гриды */
     }
 
     &__items {
