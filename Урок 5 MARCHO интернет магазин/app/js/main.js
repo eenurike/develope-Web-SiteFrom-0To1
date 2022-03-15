@@ -3,6 +3,10 @@ $(function(){
     $('.menu__list').toggleClass('menu__list--active');
   });
 
+  $('.container:not(.header .container)').click('on', function() {
+    $('.menu__list').removeClass('menu__list--active');
+  });
+
   $('.footer-top__title').click('on', function() {
     $(this).next().slideToggle();
     // Именно скрывает кликнутый элемент, next() это обращение к вледующему элементу после footer-top__title

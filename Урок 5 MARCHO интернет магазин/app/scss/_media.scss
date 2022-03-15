@@ -116,7 +116,40 @@
       }
     }
   }
+
+  .blog-page__aside .person,
+  .filter__item:not(.filter__item:first-of-type) {
+    display: none;
+  }
+
+  .blog-page__inner {
+    flex-direction: column;
+  }
+
+  .blog-page__content,
+  .blog-page__item {
+    max-width: 100% !important;
+  }
+
+  .blog-page__content {
+    order: 2;
+  }
+
+  .blog-page__item-img {
+    margin: 0 auto;
+    max-width: 100%;
+    height: auto;
+  }
+
+  .slick-initialized .slick-slide div {
+    display: flex;
+    justify-content: center;
+  }
     
+  .blog-page__aside {
+    max-width: 100%;
+    margin-bottom: 20px;
+  }
 }
 
 @media (max-width: 1050px) {
