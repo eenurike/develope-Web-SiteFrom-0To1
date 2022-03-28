@@ -1,0 +1,21 @@
+@import "vars";
+@import "fonts";
+@import "reset";
+@import "global";
+
+.header {
+  &__logo {
+    @extend %Rubik-Medium;
+    color: #436372;
+
+    display: flex;
+    align-items: center;
+    column-gap: 12px;
+    font-size: 36px;
+  }
+}
+
+@import "media";
+
+
+

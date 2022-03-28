@@ -1,0 +1,472 @@
+Стилизация checkbox, действуем по принципу спрячь и покажи чтото другое, так как чекбоксы не стилизуются, структура должна быть такая. И обязательно чтоб этот span который встает вместо input checkbox, должен находится ниже input checkbox, так как код идет сверху вниз, мы не можем задать верхнему коду свойства!!!
+
+<label class="box">
+  <input class="input" type="checkbox">
+  <span class="checkbox"></span>
+</label>
+
+<label class="box">
+  <input class="input" type="checkbox" checked>
+  /* Это чтоб всегда одна категория была выбрана */
+  <span class="checkbox"></span>
+</label>
+
+.input {
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  position: absolute;
+}
+
+/* 
+ИЛИ стилизуешь прям в самом теге span, например вставляешь картинки svg которые меняют цвет при клике 
+<label class="box">
+  <input class="input" type="checkbox" checked>
+  /* Это чтоб всегда одна категория была выбрана */
+  <span class="checkbox">
+    <svg>Bla</svg>
+  </span>
+</label>
+*/
+
+
+.input:checked + .checkbox {
+  background-image: url('../images/icons/on-check.svg');
+  /* Тут мы пишем чтоб свойство checked передалось в наш span, и стилизуем его как хотим, в моем случае я скачал галочку и при клике на span будет показываться галочка */
+}
+
+И потом просто стилизуем span на месте checkbox
+
+.checkbox {
+  width: 16px;
+  height: 16px;
+  display: block;
+  /* Чтоб этот span появился, можно было position absolute, но мне так не нравится позиционировать элемент */
+  margin-top: 2px;
+}
+
+С радиобатанами немногу схема по другому, там же нужно выбрать только одну категорию
+
+<label class="box">
+  <input class="input" type="radio" name="bla">
+  <span class="radio"></span>
+</label>
+
+<label class="box">
+  <input class="input" type="radio" name="bla">
+  <span class="radio"></span>
+</label>
+
+То есть нужно указывать атрибут name
+
+И смотри когда верстаешь блоки с филтрацией, когда выбираешь пункты, потом жмешь поиск, и сайт ищет по твоим категориям, то все элементы форм нужно писать в теге form,
+а выбор в каких либо категорях пишешь в label, label как бы обьединяет что в нем написанно, ну и при помощи манипуляции которая описанна сверху, можешь стилизовать выборку.
+И radiobutton стилизуются точно так же!!!
+
+Если нужно при hover или click поставить элемент по цетру по вертикале и он position absolute относительно родительского элемента 
+
+bla:hover {
+  bottom: 50%;
+  transform: translateY(50%)'
+}
+
+Если нужен слайдер который будет показывать одну большую фотографию а с боку маленькие, и при клике на маленькие фотографии в большом окне будет отображаться та кликнутая фотография, используя слик слайдер
+
+$('.product-inner__main').slick({
+    asNavFor: '.product-inner__aside',
+    /* Соединяем слайдеры */
+    focusOnSelect: true,
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    vertical: true,
+    /* Ну чтоб слйдер был вертикальным, а не горизонтальным */
+    draggable: false
+    /* Чтоб вообще он не двигался */
+
+  });
+  $('.product-inner__aside').slick({
+    asNavFor: '.product-inner__main',
+    /* Соединяем слайдеры */
+    draggable: false
+  });
+
+  структура HTML 
+
+<div class="product-inner__aside">
+  <div class="product-inner__aside-item">
+    <img class="product-inner__aside-img" src="images/product/product-details/1.jpg" alt="">
+  </div>
+  <div class="product-inner__aside-item">
+    <img class="product-inner__aside-img" src="images/product/product-details/1.jpg" alt="">
+  </div>
+  <div class="product-inner__aside-item">
+    <img class="product-inner__aside-img" src="images/product/product-details/1.jpg" alt="">
+  </div>
+  <div class="product-inner__aside-item">
+    <img class="product-inner__aside-img" src="images/product/product-details/1.jpg" alt="">
+  </div>
+</div>
+
+<div class="product-inner__main">
+  <div class="product-inner__main-item">
+    <img class="product-inner__main-img" src="images/product/product-details/1.jpg" alt="">
+  </div>
+  <div class="product-inner__main-item">
+    <img class="product-inner__main-img" src="images/product/product-details/1.jpg" alt="">
+  </div>
+  <div class="product-inner__main-item">
+    <img class="product-inner__main-img" src="images/product/product-details/1.jpg" alt="">
+  </div>
+  <div class="product-inner__main-item">
+    <img class="product-inner__main-img" src="images/product/product-details/1.jpg" alt="">
+  </div>
+</div>
+
+То есть структура второго слайдера должна быть такой же как и в первом
+
+css полезное свойство
+pointer-events: auto | none
+auto Восстанавливает функциональность элемента по умолчанию.
+none Предотвращает события мыши и щелчки по элементу.
+
+background-position: bottom -150px left 0;
+типа низу -150px слева 0 задаешь, так легче позиционировать элемента
+
+И отступы лучше используй VW так как при адаптивке это очень удобно, https://only-to-top.ru/services/px-to-vw.html это калькулятор перевода px в vw
+
+Если блок больще чем картинка, можешь img задать width: 100%, чтоб картинка разширилась на всю ширину блока 
+
+
+Липкий элемент, ведет себя как position statick, relative тоесть элемент не выдергивается из потока, стоит на своем месте, но когда перешел отметку которую мы ему задали top он выдергивается с потока и ведет себя как absolute, fixed. Но смотри один нюанс, если ты используешь подход с прибиванием футера к низу, там используется свойство к html height:100%, изза этого sticky работает не коректно, нужно после тега body весь контент обернуть в другой тег
+Но если хочешь чтоб эта ликая навигация меняла свою форму, то лучше исполльзовать fixed и JS
+.sticky {
+    /* Новое свойство sticky */
+    position: sticky;
+    top: 0;
+    /* Как и fixed он ездит вместе со скролом, но только fixed 
+    сразу выпадает из потока, с sticky сперва находится в потоке,
+    но как только выходит из области видимости сразу выпадает 
+    из потока, обязательное условие чтоб стики заработал нужно чтоб,
+    в html структуре это элемент со стики не был один, потом обязательно
+    какоето позиционирование нужно прописать у нас top: 0 */
+    /* Но проблема в том что наш заголовок в моменте находится за нашим
+    блоком box с position relative */
+    z-index: 1;
+    /* Теперь мы наш заголовок вывели перед box за счет z-index,
+    чем больше число тем приоритет больше, z-index работает только
+    с position absolute relative fixed, а если прописать box z-index 2
+    то будет же как было, box встанет на передний план */
+}
+
+overflow: hidden;
+Обрезает все что вылезло за элемент которому задали это свойтво
+overflow: auto;
+overflow: scroll;
+Добавляет скрол, например задали фиксированную высоту элементу, но контента больше чем высоты блока, и контент вываливается за пределы, с помощью этого свойства он добавит скрол в этот элемент, и контент можно будет скролить
+
+transform: translate(50px, -50px);
+первое значение X второе Y
+Но тут же приходит вопрос можно же это сделать с margin,
+если будем перемещать элемент с margin, то и все элементы
+будут смещаться, margin ведь именно отталкивает
+
+transition: all 2s ease 0s;
+Это свойство отвечает за плавность нашего,
+transition можно записывать не только для всего, но
+и для всех свойств у кого есть числовые значения 
+transition: transform 2s;
+Анимация будет чисто для transform, например на элементе есть border и transform: rotate(45deg),
+но тебе надо чтоб чисто border анимировался а поворот был резким при :hover
+transition: border 2s;
+
+Еще можно центрировать тескт по вертикали можно с помощью line-height
+<h2>Here a test project</h2>
+h2 {
+  height: 100px;
+  background-color: yellow;
+  line-height: 100px;
+}
+и так текст встал по центру по вертикали, ну это только если фиксированая высота!!!
+
+<ul>
+  <li>
+    <a href="#">Меню</a>
+  </li>
+  <li>
+    <a href="#">О нас</a>
+  </li>
+  <li>
+    <a href="#">Доставка</a>
+  </li>
+  <li>
+    <a href="#">Адрес</a>
+  </li>
+  <li>
+    <a href="#">Контакты</a>
+  </li>
+</ul>
+Для удобства пользования сайта, лучше навинацию делать
+через списки. Удобства для ограниченых в чем то людей, и так
+гугл будет лучше воспринемать сайт
+
+.menu li + li {
+Так мы говорим видишь .menu, дальше видишь первую li, и после этой
+первой li остальным li задай отступ слева
+    margin-left: 30px;
+}
+
+
+.container {
+  max-width: 1170px;
+  margin: 0 auto;
+m0-auto сокращение emmet
+  padding: 0 10px;
+Но такая ситуация, так как у нас border-box,
+эти внутрение отступы ушли внутрь нашего котейнера,
+сейчас ширина нашего контейнера 1150px, значит увеличим 
+наш контейнер на 20px 
+  max-width: 1190px;
+}
+
+
+.header__content-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+Нужна высота во весь блок, чтоб центрировать по вертикали
+    min-height: calc(100vh - 93px);
+Задумка такая, что при клике на кнопку, мы переходим на контент снизу
+а этот блок должен занимать все пространство экрана, поэтому 100vh
+отнимаем от высоты вехнеей навигации
+}
+
+.portfolio__item a{
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+Зачсчет того что мы указали по всем сторонам по 0, таким образом
+как бы блок будет занимать все пространство, но так же можно но было бы сделать heath 100% и width 100%
+} 
+
+button.slick-arrow:hover {
+  transform: translateY(-50%) scale(1.3);
+transform можно записывать вот таким образом
+}
+
+
+Специфичность селекторов
+0. 0. 0. 1 
+div {
+  background-color: blue;
+} 
+
+0. 0. 0. 2 
+body div {
+  background-color: green;
+}
+это уже сильнее чем просто div, и это перебьет div, даже если div
+находится ниже 
+
+0. 0. 1. 0 
+.test {
+  background-color: grey;
+}
+класс уже сильнее чем вложенность тегов
+
+0. 0. 2. 1 
+.test .page button{
+  background-color: purple;
+}
+Это уже сильнее чем один класс
+
+0. 3. 0. 0 
+#iAmId {
+  background-color: pink;
+}
+Идентификатор уже сильнее чем хоть сколько классов
+
+1. 0. 0. 0 
+Инлайн стили самые сильные
+<div style="background-color: yellow;"
+
+Но есть и сильнее инлайн стилей 
+div {
+  background-color: red !imortant;
+  Это перебьет даже инлайн стили
+} 
+
+
+<a class="tel" href="tel:+3806765252222" >(38067) 65 252 222</a>
+  В атрибуд href записываем вот в таком виде, чтоб пользователь
+  кликнув на номер, и он сразу мог позонить. Без пробелов, скобок и с + перед номером
+<a class="email" href="mailto:eenurike@mail.ru">info@mail.com</a>
+  mailto чтоб сразу перенаправляло на отправку сообщения, не работает(
+
+
+.form input,
+  textarea {
+  font-family: 'Open Sans', sans-serif;
+  color: #242121;
+  font-size: 30px;
+Какой стиль шрифта будет когда пользователь будет что-то вводить
+  font-weight: 800;
+}
+
+.form input::placeholder,
+  textarea::placeholder {
+Стилизуем именно внутренние шрифты в кнопках
+  font-family: 'Open Sans', sans-serif;
+  letter-spacing: 3.70909px;
+  color: #B8B8B8;
+  font-size: 14px;
+Указываем как на макете размер шрифта,
+а чтоб когда пользователь именно пишет был другой
+размер шрифта, пишем уже в input и textarea другой
+размер шрифта
+  font-weight: 300;
+Тут жирность выставляем стандартную, а то он выставляет
+значения как в input, как бы нужно обнулять именно у placeholder
+}
+
+.form textarea {
+  padding-bottom: 0;
+  min-height: 140px;
+  margin: 50px 0 40px;
+  resize: none;
+Убрали растягивание окна textarea
+  resize: vertical;
+Или устанавливаешь растягивание окна именно по вертикали, если пользователь захочет написать неиставо большой отзыв
+  max-height: 250px;
+И тогда пользователь не сможет растянуть окно больше на 250px
+}
+
+
+scroll-behavior: smooth;
+ Плавный скрол когда 
+<a class="menu__list-link" href="#bla">HOME</a>
+ у ссылки у href указан id, и к нужному блоку указываешь
+id="bla", но такой способ еще не работает в сафари
+
+SCCS
+
+.block01 {
+  background-color: rgba(#123eac, .7);
+тоесть в обычном css в rgba нельзя было писать хекс код, чтоб сделать прозрачным,
+так как мы с макетов копируем цвет в хекс
+  padding: 30px + 7px;
+такое легкое вычисление одинаковых значений можем посчитать, а например
+margin: 50% + 10px; такое эже надо с помощью calc
+}
+
+grid-template-rows: 200px 300px minmax(80px, auto);
+То есть если было бы возможно то оно было бы 80px, а если нет то сколько есть контента, такая высота и будет
+Запомни что auto, тогда элемент будет занимать сколько ему отведенно место, типа по контенту
+
+.item:nth-child(1) {
+  grid-column: 2;
+То есть первый элемент встал во второй столбец, а второй элемент переместился на третий, а в первом столбце пусто
+}
+
+.item:nth-child(2) {
+  grid-column: 1;
+Но теперь второй эллемент который в третьем столбце, переместился на вторую строку в первый столбец,
+а первый и третий столбец на первой строке пустуют, чтоб второй элемент поставить в первую строку на первый столбец то есть в начало
+  grid-row: 1;
+}
+
+.text {
+  grid-column: 3;
+  grid-row: 4;
+Блок с текстом переместили вконец, то есть на 4 строку и в третий столбец
+}
+
+.item:nth-child(4) {
+  grid-column: 1 / 3;
+Четвертый элемент будет занимать две колонки, он считает по линиям, типа с первой линии по третью линию
+  grid-row: 2 / 4;
+И теперь элемент занимает 2 строки, и положение от второй линии по четверту. Это нужно для того чтоб вообще кординально менять местоположение + увеличивая его или уменьшая
+
+  grid-column: span 2;
+Span это не то что ты подумал! это обозночает что этот элемент увеличится на две ячейки то есть будет 
+занимать два столбца, от того места где он стоит
+  grid-row: span 2;
+}
+
+.header,
+.footer {
+  padding: 40px 0;
+Отступы между основными блоками лучше задавать главным родителям,
+чтоб при адаптиве при определенном breakpoint через запятую указывать 
+родителей и им задавать отпределенные отступы
+
+flex-grow: 1;
+  flex-shrink: 1;
+Например элемент фиксированный,и нужно чтоб он одновременно сужался и был занимал все пустое пространство, прописываем эти 2 свойства
+
+&__inner {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+    //grid-template-rows: repeat(2, 1fr);
+Можно и без grid template rows так как у нас 6 карточек, а мы в строках прописали 
+всего по 3 колонки
+  column-gap: 30px;
+  row-gap: 48px;
+  gap: 45px 30px;
+В сокращенном варианте можно прописать вот так, первое значение это row, а второе column
+}
+
+&:hover {
+  box-shadow: 0px 0px 60px 20px rgba(202, 202, 202, 0.35);
+  background-color: #fff;
+  .blog__content-link,
+  svg path {
+    color: $accent;
+    fill: $accent;
+  }
+То есть если у элемента много ховерных эфектов можно сразу перечислисть всем
+}
+
+&:checked + .filter-color__checkbox {
+  background-image: url('../images/icons/shop-page/on-check.svg');
+Тут мы пишем чтоб свойство checked передалось в наш span, и стилизуем его как хотим, в моем случае я скачал галочку и при клике на span будет показываться галочка. И засчет того что эти
+элементы обьядененны в тег label, теперь даже если кликнуть на текс blue, галочка тоже 
+применится
+
+  & + .filter-color__text {
+    color: $accent;
+  }
+
+}
+
+ТАБЫ
+
+&__content-item {
+  display: none;
+Короче схема такая, если у таба и item есть класс active то он его показывает
+а другие скрывает
+  &--active{
+    display: block;
+  }
+}
+
+$('.product-tabs__tab').click('on', function(e) {
+  e.preventDefault();
+Чтоб убрать стандартное поведение элементов, например ссылки
+  $('.product-tabs__tab').removeClass('product-tabs__tab--active');
+  $(this).addClass('product-tabs__tab--active');
+this это именно кликнутый элемент
+  $('.product-tabs__content-item').removeClass('product-tabs__content-item--active');
+  $($(this).attr('href')).addClass('product-tabs__content-item--active');
+Типа именно обращаемся к атрибуту (id) у контента, так как у нас в HTML по id связаны
+блоки табов и контента
+});
+
+Взависимости от того с какой стороны будет картинка слева или справа.
+И насчет float, флоат именно предназначен чтоб текст обтикал картинку!! 
+.blog-one__img-right {
+  float: right;
+  margin-left: 29px;
+}
