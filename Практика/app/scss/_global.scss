@@ -15,11 +15,30 @@ body {
 .container {
   max-width: 1790px;
   margin: 0 auto;
-  padding: 10px;
+  padding: 0 10px;
 }
 
-.main .container {
+.main .container,
+.header-bottom .container {
   max-width: 1170px;
   margin: 0 auto;
+}
+
+.button {
+  @extend %Rubik-Medium;
+  font-size: 15px;
+  background-color: $btns;
+  color: white;
+  border: none;
+  display: flex;
+  align-items: center;
+  column-gap: 60px;
+  padding: 19px 15px;
+  cursor: pointer;
+  transition: .3s;
+
+  &:hover {
+    transform: scale(1.03);
+  }
 }
 

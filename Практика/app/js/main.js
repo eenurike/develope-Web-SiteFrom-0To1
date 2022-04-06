@@ -1,1 +1,5 @@
-console.log('lol');
+$(document).ready(function(){
+  $('.slider-container').slick({
+    
+  });
+});
