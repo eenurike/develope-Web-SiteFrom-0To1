@@ -3,6 +3,10 @@ html {
   height: 100%;
 }
 
+html {
+  font-size: 16px;
+}
+
 body {
   display: flex;
   flex-direction: column;
@@ -32,8 +36,8 @@ body {
   border: none;
   display: flex;
   align-items: center;
-  column-gap: 60px;
-  padding: 19px 15px;
+  column-gap: 3vw;
+  padding: 1.06vw 0.84vw;
   cursor: pointer;
   transition: .3s;
 

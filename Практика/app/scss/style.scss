@@ -33,7 +33,7 @@
     display: flex;
     align-items: center;
     column-gap: 11px;
-    font-size: 15px;
+    font-size: 0,9375rem;
 
     &__items {
       position: relative;
@@ -57,17 +57,18 @@
 
   .header__panel {
     display: flex;
+    align-items: center;
 
     &-form {
       position: relative;
     }
 
     &-search {
-      min-height: 52px;
+      min-height: 2.91vw;
       border-radius: 25px;
       border: 1px solid $accent;
       outline: none;
-      padding: 0 60px 0 10px;
+      padding: 0 3.35vw 0 0.56vw;
     }
 
     &-btn {
@@ -75,8 +76,8 @@
       top: 1px;
       right: 1px;
       border: none;
-      min-width: 50px;
-      min-height: 50px;
+      min-width: 2.79vw;
+      min-height: 2.79vw;
       border-radius: 50%;
       display: flex;
       justify-content: center;
@@ -88,11 +89,11 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      column-gap: 58px;
-      min-height: 51px;
-      width: 178px;
+      column-gap: 3.24vw;
+      min-height: 2.85vw;
+      width: 9.94vw;
       background-color: #fcd7b6;
-      padding: 10px 0;
+      min-height: 2.91vw;
       border-radius: 25px;
       margin-left: 20px;
       position: relative;
@@ -103,7 +104,7 @@
         top: 50%;
         transform: translateY(-50%);
         left: calc(50% - 1px);
-        height: 32px;
+        height: 1.79vw;
         width: 1px;
         background-color: #fde7d3;
       }
@@ -135,7 +136,8 @@
 
   &-bottom {
     position: relative;
-    min-height: 628px;
+    // min-height: 628px;
+    min-height: 35vw;
     // overflow: hidden;
 
     &__image {
@@ -157,20 +159,46 @@
       flex-direction: column;
       justify-content: center;
       align-items: flex-start;
-      row-gap: 40px;
+      row-gap: 2vw;
     }
 
     &__title {
-      font-size: 72px;
+      font-size: 4.5rem;
       line-height: 70px;
     }
 
     &__text {
       @extend %Rubik-Regular;
-      font-size: 18px;
+      font-size: 1,125rem;
       color: #436372;
       line-height: 30px;
     }
+  }
+
+  .slick-dots {
+    display: flex;
+    column-gap: 4px;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 2.40vw;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .slick-dots li button {
+    border: none;
+    @extend %Rubik-Medium;
+    color: $accent;
+    font-size: 11px;
+    background-color: rgba(255, 255, 255, .3);
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  
+  .slick-dots .slick-active button{
+    background-color: white;
+    color: black;
   }
 }
 
