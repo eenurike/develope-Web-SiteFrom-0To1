@@ -22,8 +22,9 @@ body {
   padding: 0 10px;
 }
 
-.main .container,
-.header-bottom .container {
+.main > .container,
+.header-bottom .container,
+.design .container {
   max-width: 1170px;
   margin: 0 auto;
 }
@@ -53,7 +54,7 @@ body {
 }
 
 .product__header {
-  padding: 4.19vw 4.47vw;
+  padding: 70px 0;
 }
 
 .product__navigation {
