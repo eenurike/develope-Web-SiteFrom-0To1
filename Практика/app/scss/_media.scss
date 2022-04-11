@@ -1,6 +1,7 @@
 @media (max-width: 1256px) {
   .header .header__panel {
-    &-search, 
+
+    &-search,
     &-details,
     &-btn {
       min-height: 36px;
@@ -21,15 +22,88 @@
   html {
     font-size: 14px;
   }
-  .nav {
-    display: none;
+
+
+  .header-top {
+    position: relative;
+
+    .nav {
+      position: absolute;
+      top: 130px;
+      // width: 100%;
+      z-index: 99;
+      left: -100%;
+      transition: .3s;
+      height: 100vh;
+      background-color: red;
+    }
+
+    .nav--active {
+      left: -10px;
+    }
   }
 
   .burger-menu {
     width: 36px;
     height: 36px;
-    background-color: orange;
+    background-color: $accent;
+    border-radius: 50%;
     margin-left: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    span {
+      position: relative;
+      display: block;
+      width: 60%;
+      height: 1px;
+      background-color: white;
+      transition: .3s;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: -6px;
+        left: 0;
+        background-color: white;
+        width: 100%;
+        height: 1px;
+        display: block;
+        transition: .3s;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: 6px;
+        left: 0;
+        background-color: white;
+        width: 100%;
+        height: 1px;
+        display: block;
+        transition: .3s;
+      }
+    }
+
+
+
+    &--active {
+      span {
+        background-color: transparent;
+
+        &::after {
+          transform: rotate(45deg);
+          top: 0;
+        }
+  
+        &::before {
+          transform: rotate(-45deg);
+          top: 0;
+        }
+      }
+
+    }
   }
 
   .header-bottom__title {
@@ -41,13 +115,53 @@
   }
 }
 
+@media (max-width: 950px) {
+  .header .header__options {
+    &-title {
+      line-height: unset;
+    }
+    
+    &-text {
+      line-height: unset;
+    }
+  }
+
+  .main .product__bottom {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+  }
+}
+
 @media (max-width: 820px) {
   .header-bottom {
     min-height: 290px;
   }
 
   img.header-bottom__image {
-   object-fit: cover;
-   min-height: 370px;
+    object-fit: cover;
+    min-height: 370px;
+  }
+}
+
+@media (max-width: 700px) {
+  .main .product__bottom {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: unset;
+
+    &-item {
+      min-height: 250px;
+    }
+  }
+}
+
+@media (max-width: 420px) {
+  .main .product__bottom {
+    grid-template-columns: repeat(1, 1fr);
+    justify-items: center;
+
+    &-item {
+      width: 250px;
+      // min-height: 380px;
+    }
   }
 }

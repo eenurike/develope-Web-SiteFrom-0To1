@@ -80,6 +80,8 @@ function scripts() {
     /* Подключили фильтрацию цен */
     'node_modules/jquery-form-styler/dist/jquery.formstyler.js',
     /* Подключили плагин стилизаций форм */
+    'node_modules/mixitup/dist/mixitup.min.js',
+    /* Подключили плагин стилизаций форм для фильтрации картинок */
     'app/js/main.js'
     /* Файлов js может быть много, так что записываем в квадратных скобках */
   ])

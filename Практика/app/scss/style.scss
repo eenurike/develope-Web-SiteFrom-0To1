@@ -215,13 +215,13 @@
       &:not(.header__options-box:last-of-type) {
         border-right: 1px solid #e8e4df;
       }
-      padding: 44px 0;
+      padding: 2.46vw 1.12vw;
     }
 
     &-images {
       position: relative;
       align-self: flex-start;
-      margin-right: 23px;
+      margin-right: 1.96vw;
 
       .header__options-circle {
         position: absolute;
@@ -243,7 +243,7 @@
     &-title {
       @extend %DMSans-Bold;
       color: #414141;
-      font-size: 18px;
+      font-size: 1,125rem;
       line-height: 2.26vw;
     }
 
@@ -251,7 +251,102 @@
       line-height: 1.69vw;
     }
   }
-  
+}
+
+.main {
+  @extend %DMSans-Bold;
+  .product {
+    &__header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    &__navigation {
+      display: flex;
+      column-gap: 30px;
+    }
+
+    &__bottom {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      
+      row-gap: 2.23vw;
+      column-gap: 1.68vw;
+      
+      &-item {
+        max-width: 270px;
+        // max-width: 15.08vw;
+        // min-height: 380px;
+        min-height: 21.23vw;
+        background-color: white;
+        box-shadow: 0px 6px 47px 3px rgba(37, 37, 37, 0.05);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        border-radius: 20px;
+        // padding: 38px 0;
+        padding: 2.12vw 0;
+        position: relative;
+        overflow: hidden;
+
+        &:hover .product__bottom-navigation {
+          bottom: 40%;
+        }
+      }
+
+      &-info {
+        text-align: center;
+      }
+
+      &-title {
+        @extend %DMSans-Medium;
+        color: #243f4d;
+      }
+
+      &-price {
+        color: #a3bbc8;
+        // margin-top: 14px;    
+        margin-top: 0.78vw;   
+      }
+
+      &-navigation {
+        display: flex;
+        column-gap: 15px;
+        position: absolute;
+        bottom: -40%;
+        left: 50%;
+        transform: translateX(-50%);
+        transition: .3s;
+
+        &__icon {
+          width: 45px;
+          height: 45px;
+          background-color: white;
+          box-shadow: 0px 6px 47px 3px rgba(37, 37, 37, 0.05);
+          border-radius: 50%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          transition: all .3s;
+          
+
+          &:hover {
+            background-color: #a3bac7;
+
+            svg path {
+              fill: white !important;
+            }
+          }
+
+
+        }
+        
+      }
+    }
+  }
 }
 
 
