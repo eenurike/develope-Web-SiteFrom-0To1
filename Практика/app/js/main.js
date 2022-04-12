@@ -13,7 +13,21 @@ $(document).ready(function(){
     $('.burger-menu').removeClass('burger-menu--active');
   });
 
-  var mixer = mixitup('.product__bottom');
+
+
+  // var containerEl1 = document.querySelector('[data-ref="container-1"]');
+  var mixerOne = mixitup('[data-ref="container-1"]', {
+    controls: {
+        scope: 'local'
+    }
+  });
+
+  // var containerEl2 = document.querySelector('[data-ref="container-2"]');
+  var mixerTwo = mixitup('[data-ref="container-2"]', {
+    controls: {
+        scope: 'local'
+    }
+  });
 
   $('.product__navigation-link').on('click', function() {
     $('.product__navigation-link').removeClass('product__navigation--active');
