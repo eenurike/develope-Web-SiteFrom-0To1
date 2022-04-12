@@ -160,7 +160,18 @@
 
   .main .product__bottom {
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, 1fr);
+
+  }
+
+  .main .design {
+    &__wrapper {
+      grid-template-columns: repeat(2, 1fr);
+      justify-items: center;
+    }
+
+    &__content {
+      grid-column: span 1;
+    }
   }
 }
 
@@ -188,6 +199,19 @@
   .main .product-banner {
     &__box {
       width: 100%;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .main .design {
+    &__wrapper {
+      grid-template-columns: 1fr;
+
+    }
+
+    &__content {
+      width: 90%;
     }
   }
 }

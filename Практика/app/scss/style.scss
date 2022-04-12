@@ -270,7 +270,6 @@
     &__bottom {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      grid-template-rows: repeat(2, 1fr);
       
       row-gap: 2.23vw;
       column-gap: 1.68vw;
@@ -418,13 +417,13 @@
   .design__wrapper {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, 1fr);
     grid-gap: 30px;
   }
 
   .design__content {
     position: relative;
-    width: 370px;
+    // max-width: 370px;
+    width: 100%;
     min-height: 245px;
     display: flex;
     justify-content: flex-end;
@@ -456,6 +455,58 @@
       font-size: 1rem;
       color: $accent;
       margin-top: 10px;
+    }
+  }
+
+  .video {
+    position: relative;
+    padding: 120px 0;
+
+    &__link {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      background-color: #a3bbc8;
+      // position: relative;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 1;
+      
+      &:hover .anime {
+        background-color: rgba(163, 187, 200, .4);
+        animation: unset;
+      }
+      
+      
+      .anime {
+        position: absolute;
+        z-index: -1;
+        width: 120px;
+        height: 120px;
+        display: block;
+        border-radius: 50%;
+        background-color: rgba(163, 187, 200, .4);
+        animation-name: play;
+        animation-duration: .8s;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+
+        @keyframes play {
+          from {
+            transform: scale(.7)
+          }
+
+          to {
+            transform: scale(1)
+          }
+        }
+      }
+      
     }
   }
 }
