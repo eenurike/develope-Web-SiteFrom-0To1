@@ -24,7 +24,9 @@ body {
 
 .main > .container,
 .header-bottom .container,
-.design .container {
+.design .container,
+.article .container,
+.article__bottom .container {
   max-width: 1170px;
   margin: 0 auto;
 }
