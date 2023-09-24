@@ -1,1 +1,1 @@
-{"version":3,"sources":["../scss/myreset.scss"],"names":[],"mappings":"AAAA,qBAGE,QAAA,CACA,SAAA,CACA,qBAAA","file":"myreset.min.css"}
+{"version":3,"sources":["../scss/myreset.scss","myreset.min.css"],"names":[],"mappings":"AAAA;;;EAGE,SAAA;EACA,UAAA;EACA,sBAAA;ACCF","file":"myreset.min.css"}
