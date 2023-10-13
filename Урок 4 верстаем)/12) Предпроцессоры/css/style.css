@@ -5,13 +5,12 @@
 *::before {
   margin: 0;
   padding: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 /* Подключение файлов */
 /* Переменные, и такие переменные можем создавать на любые значения */
-.menu__inner, .menu__aside {
+.menu__aside, .menu__inner {
   background-position: top center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -19,27 +18,23 @@
 }
 
 body {
-  background-color: #685e5e;
-  color: #c2933c;
+  background-color: rgb(104, 94, 94);
+  color: rgb(194, 147, 60);
   /* И вставляем переменные на нужные свойства */
 }
 
 /* Синтаксис предпроцессоров */
 .menu {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
 }
-
 .menu__inner {
   max-width: 1000px;
   background-image: url("images/bla.png");
   /* И наша загатовочка вставится, но видим что в компилированынй код, он наша
-    заготовочку вставил в самое начало, но предпроцессор умный пацан, так как,
-    если для других элементов нужны будут какие нибудь другие значения, он просто
-    звготовочку перетрет! ИЛИ */
+  заготовочку вставил в самое начало, но предпроцессор умный пацан, так как,
+  если для других элементов нужны будут какие нибудь другие значения, он просто
+  звготовочку перетрет! ИЛИ */
 }
-
 .menu__aside {
   background-image: url("images/loh.jpg");
   /* И он не будет дублировать эту нашу заготовку, а запишет через запятую */
@@ -53,5 +48,4 @@ body {
   padding: 37px;
   /* такое легкое вычисление одинаковых значений можем посчитать, а например
   margin: 50% + 10px; такое эже надо с помощью calc */
-}
-/*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=style.css.map */

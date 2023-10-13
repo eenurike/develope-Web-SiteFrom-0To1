@@ -1,9 +1,1 @@
-{
-    "version": 3,
-    "mappings": "AAAA,AAAA,CAAC;AACD,CAAC,AAAA,OAAO;AACR,CAAC,AAAA,QAAQ,CAAC;EACR,MAAM,EAAE,CAAC;EACT,OAAO,EAAE,CAAC;EACV,UAAU,EAAE,UAAU;CACvB",
-    "sources": [
-        "../scss/myreset.scss"
-    ],
-    "names": [],
-    "file": "myreset.css"
-}
+{"version":3,"sources":["../scss/myreset.scss","myreset.css"],"names":[],"mappings":"AAAA;;;EAGE,SAAA;EACA,UAAA;EACA,sBAAA;ACCF","file":"myreset.css"}
